@@ -11,11 +11,12 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="header" position="45,442" size="100,100">(live: 1s) [
+<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="header" position="45,442" size="100,100">{(live: 1s) [
 	You are |age&gt;[$age] years old. 
 	You have |money&gt;[$money] cash.
 	You have |stress&gt;[$stress] stress.
-]</tw-passagedata><tw-passagedata pid="2" name="Money" tags="" position="46,133" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Hub" tags="timed" position="719,273" size="100,100">(set: $timeline to 1)
+]
+}</tw-passagedata><tw-passagedata pid="2" name="Money" tags="" position="46,133" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Hub" tags="timed" position="719,273" size="100,100">(set: $timeline to 1)
 |cry&gt;[Cry(click: ?cry)[
 (display: &quot;Cry&quot;)]]
 
@@ -36,7 +37,8 @@
 (if:  $age &gt;= 18)[|party&gt;[Party(click: ?party)[(display: &quot;Party&quot;)]]]
 ]</tw-passagedata><tw-passagedata pid="4" name="Cry" tags="" position="46,340" size="100,100">(set: $stress to it - 15)
 (replace: ?stress)[$stress]
-(replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="46,545" size="100,100">(set: $timeline to 1)
+(replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="46,545" size="100,100">{
+(set: $timeline to 1)
 
 (set: $age to 0)
 
@@ -55,7 +57,8 @@
 
 (set: $childrenCount to 0)
 
-(set: $kinderComplete to 0)</tw-passagedata><tw-passagedata pid="6" name="Play" tags="" position="46,238" size="100,100">(set: $stress to it - 25)
+(set: $kinderComplete to 0)
+}</tw-passagedata><tw-passagedata pid="6" name="Play" tags="" position="46,238" size="100,100">(set: $stress to it - 25)
 (set: $socialLevel to it + 2)
 (replace: ?stress)[$stress]
 (replace: ?play)[Play(click: ?play)[(display: &quot;Play&quot;)]]</tw-passagedata><tw-passagedata pid="7" name="Kindergarten" tags="" position="2607,171" size="100,100">(set: $timeline to 0)
@@ -105,7 +108,7 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 (replace: ?instrument)[Play Instrument(click: ?intrument)[(display: &quot;Instrument&quot;)]]</tw-passagedata><tw-passagedata pid="13" name="Sports" tags="" position="148,340" size="100,100">(set: $stress to it - 10)
 (set: $socialLevel to it + 10)
 (replace: ?stress)[$stress]
-(replace: ?sports)[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="" tags="" position="148,443" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Testing Git" tags="" position="955,541" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Passing Time" tags="header" position="718,393" size="100,100">
+(replace: ?sports)[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="" tags="" position="148,443" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Testing Git" tags="" position="955,541" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Passing Time" tags="header" position="718,393" size="100,100">{
 (if: (passage:)&#39;s tags contains &quot;timed&quot;) [
 	(live: 1s)[
 		(if: $timeline is 1)[
@@ -113,7 +116,7 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 		(replace: ?age)[$age]]
 	]
 ]
-
+}
 </tw-passagedata><tw-passagedata pid="17" name="Study" tags="" position="150,133" size="100,100">(set: $stress to it - 15)
 (replace: ?stress)[$stress]
 (replace: ?study)[Cry(click: ?study)[(display: &quot;Study&quot;)]]</tw-passagedata></tw-storydata>
