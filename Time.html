@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="" position="45,451" size="100,100">(live: 0.1s) [
+<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="header" position="45,451" size="100,100">(live: 0.1s) [
 	You are |age&gt;[$age] years old. 
 	You have |money&gt;[$money] cash.
 	You have |stress&gt;[$stress] stress.
@@ -152,7 +152,7 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 (replace: ?instrument)[Play Instrument(click: ?intrument)[(display: &quot;Instrument&quot;)]]</tw-passagedata><tw-passagedata pid="13" name="Sports" tags="" position="149,342" size="100,100">(set: $stress to it - 10)
 (set: $socialLevel to it + 10)
 (replace: ?stress)[$stress]
-(replace: ?sports)[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="" tags="" position="149,450" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Testing Git" tags="" position="955,541" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Passing Time" tags="" position="479,522.5" size="100,100">
+(replace: ?sports)[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="" tags="" position="149,450" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Testing Git" tags="" position="955,541" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Passing Time" tags="header" position="479,522.5" size="100,100">
 (if: (passage:)&#39;s tags contains &quot;timed&quot;) [
 	(live: 0.1s)[
 		(if: $timeline is 1)[
