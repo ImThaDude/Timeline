@@ -11,11 +11,15 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="footer" position="45,451" size="100,100">(live: 1s)[
+<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="footer" position="45,451" size="100,100">You are |age&gt;[$age] years old. 
+You have |money&gt;[$money] cash.
+You have |stress&gt;[$stress] stress.
+
+(live: 1s)[
 (if: $timeline is 1)[
 (set: $age to it + 0.20)
 (replace: ?age)[$age]]
-]</tw-passagedata><tw-passagedata pid="2" name="Money" tags="" position="46,133" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Hub" tags="" position="691,316" size="100,100">(set: $timeline to 1)
+]</tw-passagedata><tw-passagedata pid="2" name="Money" tags="" position="46,133" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Hub" tags="" position="692,316" size="100,100">(set: $timeline to 1)
 
 |cry&gt;[Cry
 (click: ?cry)[(display: &quot;Cry&quot;)]]
@@ -83,11 +87,7 @@
 		|excercise&gt;[Excercise(click: ?excercise)[(display: &quot;Excercise&quot;)]]]
 	(if:  $age &gt;= 18)[
 		|getMarried&gt;[Get Married(click: ?getMarried)[(display: &quot;GetMarried&quot;)]]]
-]
-
-You are |age&gt;[$age] years old. 
-You have |money&gt;[$money] cash.
-You have |stress&gt;[$stress] stress.</tw-passagedata><tw-passagedata pid="4" name="Cry" tags="" position="46,342" size="100,100">(set: $stress to it - 15)
+]</tw-passagedata><tw-passagedata pid="4" name="Cry" tags="" position="46,342" size="100,100">(set: $stress to it - 15)
 (replace: ?stress)[$stress]
 (replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="46,558" size="100,100">(set: $timeline to 1)
 
