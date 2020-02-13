@@ -68,59 +68,18 @@
 (set: $intelligence to it + 1)
 (set: )
 (replace: ?stress)[$stress]
-(replace: ?play)[Play(click: ?play)[(display: &quot;Play&quot;)]]</tw-passagedata><tw-passagedata pid="7" name="Kindergarten" tags="" position="2607,171" size="100,100">(set: $timeline to 0)
-
-Its your first day of class and the teacher has a smile that is lighting up the room. They have the classroom completely organized ready to for the school year to begin. 
-
-[[Take seat-&gt;KinderGood-1]]
-[[Sneak outside-&gt;KinderBad-1]]</tw-passagedata><tw-passagedata pid="8" name="KinderGood-1" tags="" position="2784,249" size="100,100">Today they focused on getting to know everyone. They made sure people rised their hands, didn&#39;t interrupt others, and that everyone clapped after each introduction.
-
-[[Continue.-&gt;KinderGood-2]]</tw-passagedata><tw-passagedata pid="9" name="KinderBad-1" tags="" position="2788,98" size="100,100">Outside the classroom you see the world differently. It&#39;s the first time away from any guardians and their sense of safety. You try to leave the school grounds but cannot. There is a sense of adventure growing within. 
-
-[[Continue.-&gt;KinderBad-2]]</tw-passagedata><tw-passagedata pid="10" name="KinderGood-2" tags="" position="2596,286" size="100,100">
-Its the end of the year now. Gradutation has everyone in a good mood. You learned the alphabet, grammar, geometry, addition, substraction and more. 
-
-
-[[Continue.-&gt;Hub]]
-
-(set: $stress to it + 300)
-
-(set: $intelligence to it + 50)
-(set: $wisdom to it + 10)
-(set: $charisma to it + 15)
-
-(set: $socialLevel to it + 10)
-(set: $careerLevel to it + 0)
-(set: $familyLevel to it + 5)
-(set: $loveLevel to it + 5)
-
-(set: $kinderComplete to 1)</tw-passagedata><tw-passagedata pid="11" name="KinderBad-2" tags="" position="2602,45" size="100,100">Graduation feels scary. You were so confortable in this environment. So free to blend into the crowd and escape as easily too.
-
-[[Continue.-&gt;Hub]]
-
-(set: $stress to it + 150)
-
-(set: $intelligence to it + 30)
-(set: $wisdom to it + 50)
-(set: $charisma to it + 10)
-
-(set: $socialLevel to it + 7)
-(set: $careerLevel to it + 0)
-(set: $familyLevel to it + 10)
-(set: $loveLevel to it + 8)
-
-(set: $kinderComplete to 1)</tw-passagedata><tw-passagedata pid="12" name="Arts" tags="" position="130,303" size="100,100">(set: $stress to it - 1)
+(replace: ?play)[Play(click: ?play)[(display: &quot;Play&quot;)]]</tw-passagedata><tw-passagedata pid="7" name="Arts" tags="" position="130,303" size="100,100">(set: $stress to it - 1)
 (set: $intelligence to it + 2)
 (replace: ?stress)[$stress]
-(replace: ?arts)[Arts(click: ?arts)[(display: &quot;Arts&quot;)]]</tw-passagedata><tw-passagedata pid="13" name="Sports" tags="" position="130,405" size="100,100">(set: $stress to it - 1)
+(replace: ?arts)[Arts(click: ?arts)[(display: &quot;Arts&quot;)]]</tw-passagedata><tw-passagedata pid="8" name="Sports" tags="" position="130,405" size="100,100">(set: $stress to it - 1)
 (set: $strength to it + 1)
 (set: $charisma to it + 1)
 (replace: ?stress)[$stress]
-(replace: ?sports)[Sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="Shopping" tags="" position="130,508" size="100,100">(set: $stress to it - 3 * $age)
+(replace: ?sports)[Sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="9" name="Shopping" tags="" position="130,508" size="100,100">(set: $stress to it - 3 * $age)
 (set: $money to it - 300 * $age)
 (set: $charisma to it + 1 * $age / 6)
 (replace: ?stress)[$stress]
-(replace: ?shopping)[Shopping(click: ?shopping)[(display: &quot;Shopping&quot;)]]</tw-passagedata><tw-passagedata pid="15" name="Passing Time" tags="header" position="365,55" size="100,100">{
+(replace: ?shopping)[Shopping(click: ?shopping)[(display: &quot;Shopping&quot;)]]</tw-passagedata><tw-passagedata pid="10" name="Passing Time" tags="header" position="365,55" size="100,100">{
 (if: (passage:)&#39;s tags contains &quot;timed&quot;) [
 	(live: 1s)[
 		(if: $timeline is 1)[
@@ -129,10 +88,10 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 	]
 ]
 }
-</tw-passagedata><tw-passagedata pid="16" name="Study" tags="" position="27,509" size="100,100">(set: $stress to it + 2)
+</tw-passagedata><tw-passagedata pid="11" name="Study" tags="" position="27,509" size="100,100">(set: $stress to it + 2)
 (set: $intelligence to it + 3)
 (replace: ?stress)[$stress]
-(replace: ?study)[Study(click: ?study)[(display: &quot;Study&quot;)]]</tw-passagedata><tw-passagedata pid="17" name="Options" tags="" position="660,150" size="100,100">  &lt;div class=&quot;column&quot; style=&quot;background-color:#aaa;&quot;&gt;{
+(replace: ?study)[Study(click: ?study)[(display: &quot;Study&quot;)]]</tw-passagedata><tw-passagedata pid="12" name="Options" tags="" position="660,150" size="100,100">  &lt;div class=&quot;column&quot; style=&quot;background-color:#aaa;&quot;&gt;{
 {(set: $timeline to 1)
 |cry&gt;[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]}
 (live: 1s) 
@@ -161,41 +120,41 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 		|excercise&gt;[Excercise(click: ?excercise)[(display: &quot;Excercise&quot;)]]
 	}]
 ]}
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Storylets" tags="" position="2178,1498" size="100,100">&lt;div class=&quot;column&quot; style=&quot;background-color:#bbb;&quot;&gt; 
-(live: 1s)[
-	(if:  $age &gt;= 18)[{
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Storylets" tags="" position="2178,1498" size="100,100">&lt;div class=&quot;column&quot; style=&quot;background-color:#bbb;&quot;&gt; 
+{(live: 1s)[
+	(if:  $age &gt;= 6)[{
 		[[Found an injured animal-&gt;InjuredAnimal]]
 	}]]
 	(if:  $age &gt;= 18)[{
-		[[You and a friend are arguing-&gt;Arguement]]
-	}]]
+		[[You and a friend are arguing-&gt;SchoolDays]]
+	}]
 	(if:  $age &gt;= 18)[{
 		[[Celebrate your birthday-&gt;birthdayChild]]
-	}]]
+	}]
 	(if:  $age &gt;= 18)[{
 		[[Wedding-&gt;WeddingGuest]]
-	}]]
+	}]
 	(if:  $age &gt;= 18)[{
 		[[Go to the store-&gt;Store]]
-	}]]
+	}]
 	(if:  $age &gt;= 18)[{
 		[[Sleepover-&gt;Sleepover]]
-	}]]
+	}]
 	(if:  $age &gt;= 18)[{
 		[[First phone-&gt;FirstPhone]]
-	}]]
+	}]
 	(if:  $age &gt;= 18)[{
 		[[Dinner with the family-&gt;Dinner]]
-	}]]
+	}]
 	(if:  $age &gt;= 18)[{
 		|getMarried&gt;[Get Married(click: ?getMarried)[(display: &quot;GetMarried&quot;)]]
 	}]
 	(if:  $age &gt;= 18)[{
 		|party&gt;[Party(click: ?party)[(display: &quot;Party&quot;)]]
-	}]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="GameOver-Money" tags="nodisplay" position="1255,125" size="100,100">Time is money but money is also time.
+	}]}
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="GameOver-Money" tags="nodisplay" position="1402,102" size="100,100">Time is money but money is also time.
 
-You lost.</tw-passagedata><tw-passagedata pid="20" name="Accomplishments" tags="" position="1365,125" size="100,100">Tons of if statements really go here showing what you did...</tw-passagedata><tw-passagedata pid="21" name="Stress" tags="header" position="244,53" size="100,100">{
+You lost.</tw-passagedata><tw-passagedata pid="15" name="Accomplishments" tags="" position="1512,102" size="100,100">Tons of if statements really go here showing what you did...</tw-passagedata><tw-passagedata pid="16" name="Stress" tags="header" position="244,53" size="100,100">{
 (if: (passage:)&#39;s tags contains &quot;timed&quot;) [
 	(live: 1s)[
 		(set: $stress to $stress + $age)
@@ -205,56 +164,73 @@ You lost.</tw-passagedata><tw-passagedata pid="20" name="Accomplishments" tags="
 	]
 ]
 }
-</tw-passagedata><tw-passagedata pid="22" name="GameOver-Stress" tags="nodisplay" position="1258,234" size="100,100">You overworked yourself.
+</tw-passagedata><tw-passagedata pid="17" name="GameOver-Stress" tags="nodisplay" position="1405,211" size="100,100">You overworked yourself.
 
-You lost.</tw-passagedata><tw-passagedata pid="23" name="Work" tags="" position="28,613" size="100,100">(set: $stress to it + 3 * ($careerlevel + 1))
+You lost.</tw-passagedata><tw-passagedata pid="18" name="Work" tags="" position="28,613" size="100,100">(set: $stress to it + 3 * ($careerlevel + 1))
 (set: $money to it + (500 * ((60 * ($careerlevel + 1) - $age) / 30)))
 (replace: ?stress)[$stress]
-(replace: ?work)[Work(click: ?work)[(display: &quot;Work&quot;)]]</tw-passagedata><tw-passagedata pid="24" name="InjuredAnimal" tags="" position="2185,1345" size="100,100">You see an injured duck in your back yard what do you do?
+(replace: ?work)[Work(click: ?work)[(display: &quot;Work&quot;)]]</tw-passagedata><tw-passagedata pid="19" name="InjuredAnimal" tags="" position="2185,1345" size="100,100">You and a friend see an injured duck in your back yard what do you do?
 
 [[Help it recover]]
-[[Leave it alone]]
-[[Get help]]</tw-passagedata><tw-passagedata pid="25" name="Arguement" tags="" position="2023,1414" size="100,100">You and a friendare arguing. 
-
+[[Leave it alone]]</tw-passagedata><tw-passagedata pid="20" name="SchoolDays" tags="" position="2009,1360" size="100,100">Another day at school what is going on today?
 What is it about?
 
-[[Another friend]]
-[[Rules of a game]]
-[[A toy]]</tw-passagedata><tw-passagedata pid="26" name="birthdayChild" tags="" position="1953,1529" size="100,100">It&#39;s your birthday. Do you celebrate at . . .
+[[Playing a game]]
+[[Show and tell]]</tw-passagedata><tw-passagedata pid="21" name="birthdayChild" tags="" position="1953,1529" size="100,100">It&#39;s your birthday. Do you celebrate at . . .
 
 [[Home]]
 [[Park]]
 [[Restuarant]]
-[[Amusement Park]]</tw-passagedata><tw-passagedata pid="27" name="WeddingGuest" tags="" position="2064,1643" size="100,100">Your at your uncle&#39;s wedding. You are . . .
+[[Amusement Park]]</tw-passagedata><tw-passagedata pid="22" name="WeddingGuest" tags="" position="2064,1643" size="100,100">Your at your uncle&#39;s wedding. You are . . .
 
 [[Flower girl]]
 [[Ring-bearer]]
-[[Just another annoying kid]]</tw-passagedata><tw-passagedata pid="28" name="Store" tags="" position="2195,1667" size="100,100">You are at a store. Who are you with?
+[[Just another annoying kid]]</tw-passagedata><tw-passagedata pid="23" name="Store" tags="" position="2195,1667" size="100,100">You are at a store. Who are you with?
 
 [[Parents]]
 [[Relatives]]
-[[Friends]]</tw-passagedata><tw-passagedata pid="29" name="Sleepover" tags="" position="2350,1619" size="100,100">Today your going to a sleepover. 
+[[Friends]]</tw-passagedata><tw-passagedata pid="24" name="Sleepover" tags="" position="2350,1619" size="100,100">Today your going to a sleepover. 
 Who&#39;s home is it?
 
 [[Grandparent&#39;s]]
 [[Cousin&#39;s]]
-[[Friend&#39;s]]</tw-passagedata><tw-passagedata pid="30" name="FirstPhone" tags="" position="2387,1472" size="100,100">You have just recieved your first phone.
+[[Friend&#39;s]]</tw-passagedata><tw-passagedata pid="25" name="FirstPhone" tags="" position="2387,1472" size="100,100">You have just recieved your first phone.
 Who is the first person you message?
 
 [[Parent]]
 [[Sibling]]
 [[Relative]]
 [[Friend]]
-[[Stranger]]</tw-passagedata><tw-passagedata pid="31" name="Dinner" tags="" position="2357,1340" size="100,100">Diner has been prepared and you are not liking the food.
+[[Stranger]]</tw-passagedata><tw-passagedata pid="26" name="Dinner" tags="" position="2357,1340" size="100,100">Diner has been prepared and you are not liking the food.
 What do you do?
 
 [[Refuse to eat]]
 [[Protest]]
-[[Feed it to the dog]]</tw-passagedata><tw-passagedata pid="32" name="Help it recover" tags="" position="2002,1097" size="100,100">Has you go to pick it up, you see it has a head and wing injury.
+[[Feed it to the dog]]</tw-passagedata><tw-passagedata pid="27" name="Help it recover" tags="" position="2030,1100" size="100,100">Has you go to pick it up, you see it has a head and wing injury.
 
-[[Pick it up]]</tw-passagedata><tw-passagedata pid="33" name="Leave it alone" tags="" position="2120,1099" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="34" name="Get help" tags="" position="2240,1097" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="35" name="Another friend" tags="" position="1626,1290" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="36" name="Rules of a game" tags="" position="1731,1212" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="37" name="A toy" tags="" position="1834,1131" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="38" name="Home" tags="" position="1533,1429" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="Park" tags="" position="1526,1536" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="40" name="Restuarant" tags="" position="1524,1645" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="41" name="Amusement Park" tags="" position="1602,1775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="42" name="Flower girl" tags="" position="1744,1875" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="43" name="Ring-bearer" tags="" position="1852,1949" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="44" name="Just another annoying kid" tags="" position="1966,1983" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="45" name="Parents" tags="" position="2134,1975" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="46" name="Relatives" tags="" position="2247,1978" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="47" name="Friends" tags="" position="2364,1980" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="48" name="Refuse to eat" tags="" position="2410,1100" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="49" name="Protest" tags="" position="2530,1108" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="50" name="Feed it to the dog" tags="" position="2639,1150" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="51" name="Parent" tags="" position="2812,1715" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="52" name="Sibling" tags="" position="2847,1610" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="53" name="Relative" tags="" position="2845,1502" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="54" name="Friend" tags="" position="2842,1389" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="55" name="Stranger" tags="" position="2791,1281" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="56" name="Grandparent&#39;s" tags="" position="2518,1967" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="57" name="Cousin&#39;s" tags="" position="2628,1937" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="58" name="Friend&#39;s" tags="" position="2729,1834" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="59" name="Pick it up" tags="" position="1971,978" size="100,100">You place the duck in a kennel and bring it some food and water. Your parents tell you it can stay until tommorrow afternoon.
+[[Pick it up]]</tw-passagedata><tw-passagedata pid="28" name="Leave it alone" tags="" position="2148,1102" size="100,100">As you are staring at the duck a rock glides across your sight and lands near the duck startling it back. 
 
-[[Continue]]</tw-passagedata><tw-passagedata pid="60" name="Continue" tags="" position="1938,866" size="100,100">After your parents leave your sibling crys out, I injured the duck. I thro</tw-passagedata></tw-storydata>
+[[Throw rock at the duck]]</tw-passagedata><tw-passagedata pid="29" name="Playing a game" tags="" position="1717,1243" size="100,100">You are playing a game of freeze tag at school you are it and cannot seem to make progress in freezing everyone.
+
+[[Continue-&gt;tag]]</tw-passagedata><tw-passagedata pid="30" name="Show and tell" tags="" position="1829,1118" size="100,100">Today is show and tell at school and you have brought your favorite toy. After your are done presenting another student shares his toy too. It&#39;s the same as yours. You feel a sense of excitement because someone likes the same toy as you do. 
+
+[[Play with them-&gt;playTogether]]</tw-passagedata><tw-passagedata pid="31" name="Home" tags="" position="1533,1429" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="32" name="Park" tags="" position="1526,1536" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="33" name="Restuarant" tags="" position="1524,1645" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="34" name="Amusement Park" tags="" position="1602,1775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="35" name="Flower girl" tags="" position="1744,1875" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="36" name="Ring-bearer" tags="" position="1852,1949" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="37" name="Just another annoying kid" tags="" position="1966,1983" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="38" name="Parents" tags="" position="2134,1975" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="Relatives" tags="" position="2247,1978" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="40" name="Friends" tags="" position="2364,1980" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="41" name="Refuse to eat" tags="" position="2410,1100" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="42" name="Protest" tags="" position="2530,1108" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="43" name="Feed it to the dog" tags="" position="2639,1150" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="44" name="Parent" tags="" position="2812,1715" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="45" name="Sibling" tags="" position="2847,1610" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="46" name="Relative" tags="" position="2845,1502" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="47" name="Friend" tags="" position="2842,1389" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="48" name="Stranger" tags="" position="2791,1281" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="49" name="Grandparent&#39;s" tags="" position="2518,1967" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="50" name="Cousin&#39;s" tags="" position="2628,1937" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="51" name="Friend&#39;s" tags="" position="2729,1834" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="52" name="Pick it up" tags="" position="1961,947" size="100,100">You place the duck in a kennel and bring it some food and water. Your parents tell you it can stay until tommorrow afternoon.
+
+[[Continue-&gt;duckReveal]]</tw-passagedata><tw-passagedata pid="53" name="duckReveal" tags="" position="1871,806" size="100,100">After your parents leave your friend crys out, &quot;I injured the duck. I wanted to see if I could hit it with a rock. You didn&#39;t see me do it and I could not tell you because you looked so concerned and wanted to help it out.&quot;
+
+[[Continue-&gt;Hub]]</tw-passagedata><tw-passagedata pid="54" name="Throw rock at the duck" tags="" position="2086,915" size="100,100">Your lack of empathy has forced to join in abusing this creature. 
+
+[[Continue-&gt;Hub]]</tw-passagedata><tw-passagedata pid="55" name="tag" tags="" position="1582,1155" size="100,100">You notice a player running without being touched and unfrozen. 
+
+[[You call out the cheating.]]
+[[Give up]]</tw-passagedata><tw-passagedata pid="56" name="You call out the cheating." tags="" position="1482,1042" size="100,100">Fed up with this game you run towards the cheater call out their cheating. The turn and explain, &quot;I have diabetes, I need to go and get my insulin shot. I&#39;ll be right back.&quot; Struck from this news you stop playing.
+
+[[Continue-&gt;Hub]]</tw-passagedata><tw-passagedata pid="57" name="Give up" tags="" position="1439,1154" size="100,100">You walk behind the ball wall and sit for the rest of recess.
+
+[[Continue-&gt;Hub]]</tw-passagedata><tw-passagedata pid="58" name="playTogether" tags="" position="1732,971" size="100,100">As you are playing together you seem to have mixed up the toys and you cannot tell which is which. 
+
+[[Take the prestine toy-&gt;niceToy]]
+[[Take the one with scratches-&gt;scratchedToy]]</tw-passagedata><tw-passagedata pid="59" name="niceToy" tags="" position="1591,830" size="100,100">(goto: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="60" name="scratchedToy" tags="" position="1732,824" size="100,100">(goto: &quot;Hub&quot;)</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
