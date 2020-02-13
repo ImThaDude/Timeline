@@ -11,31 +11,85 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="header" position="45,442" size="100,100">{(live: 1s) [
+<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="header" position="45,442" size="100,100">(live: 1s) [
 	You are |age&gt;[$age] years old. 
 	You have |money&gt;[$money] cash.
 	You have |stress&gt;[$stress] stress.
-]
-}</tw-passagedata><tw-passagedata pid="2" name="Money" tags="" position="46,133" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Hub" tags="timed" position="719,273" size="100,100">(set: $timeline to 1)
-|cry&gt;[Cry(click: ?cry)[
-(display: &quot;Cry&quot;)]]
+]</tw-passagedata><tw-passagedata pid="2" name="Money" tags="" position="46,133" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Hub" tags="timed" position="719,273" size="100,100">&lt;style&gt;
+* {
+  box-sizing: border-box;
+}
 
-(live: 1s)[(if:  $age &gt; 5)[|play&gt;[Play(click: ?play)[(display: &quot;Play&quot;)]]]
-(if: ($age &gt;= 4) and ($age &lt; 6) and ($kinderComplete is 0))[[[Kindergarten-&gt;Kindergarten]]]
-(if:  $age &gt;= 6)[|instrument&gt;[Play Instrument(click: ?instrument)[(display: &quot;Instrument&quot;)]]]
-(if:  $age &gt;= 6)[|sports&gt;[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]]
-(if:  $age &gt;= 6)[|arts&gt;[Arts(click: ?arts)[(display: &quot;Arts&quot;)]]]
-(if:  $age &gt;= 6)[|playVideoGames&gt;[Play Video Games(click: ?playVideoGames)[(display: &quot;VideoGames&quot;)]]]
-(if:  $age &gt;= 6)[|study&gt;[Study(click: ?study)[(display: &quot;Study&quot;)]]]
-(if:  $age &gt;= 12)[|socialize&gt;[Socialize(click: ?socialize)[(display: &quot;Socialize&quot;)]]]
-(if:  $age &gt;= 12)[|shopping&gt;[Shopping(click: ?shopping)[(display: &quot;Shopping&quot;)]]]
-(if:  $age &gt;= 18)[|work&gt;[Work(click: ?work)[(display: &quot;Work&quot;)]]]
-(if:  $age &gt;= 18)[|college&gt;[College(click: ?college)[(display: &quot;College&quot;)]]]
-(if:  $age &gt;= 16)[|excercise&gt;[Excercise(click: ?excercise)[(display: &quot;Excercise&quot;)]]]
-&lt;!--Special storylets --&gt;
-(if:  $age &gt;= 18)[|getMarried&gt;[Get Married(click: ?getMarried)[(display: &quot;GetMarried&quot;)]]]
-(if:  $age &gt;= 18)[|party&gt;[Party(click: ?party)[(display: &quot;Party&quot;)]]]
-]</tw-passagedata><tw-passagedata pid="4" name="Cry" tags="" position="46,340" size="100,100">(set: $stress to it - 15)
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: &quot;&quot;;
+  display: table;
+  clear: both;
+}
+&lt;/style&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;column&quot; style=&quot;background-color:#aaa;&quot;&gt;
+(set: $timeline to 1)
+{|cry&gt;[Cry(click: ?cry)[
+(display: &quot;Cry&quot;)]]}
+
+(live: 1s)[
+	(if:  $age &gt; 5) [{
+		|play&gt;[Play(click: ?play)[(display: &quot;Play&quot;)]]
+	}]
+	(if: ($age &gt;= 4) and ($age &lt; 6) and ($kinderComplete is 0))	[{
+		[[[Kindergarten-&gt;Kindergarten]]]
+	}]
+	(if:  $age &gt;= 6)[{
+		|instrument&gt;[Play Instrument(click: ?instrument)[(display: &quot;Instrument&quot;)]]
+	}]
+	(if:  $age &gt;= 6)[{
+		|sports&gt;[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]
+	}]
+	(if:  $age &gt;= 6)[{
+		|arts&gt;[Arts(click: ?arts)[(display: &quot;Arts&quot;)]]
+	}]
+	(if:  $age &gt;= 6)[{
+		|playVideoGames&gt;[Play Video Games(click: ?playVideoGames)[(display: &quot;VideoGames&quot;)]]
+	}]
+	(if:  $age &gt;= 6)[{
+		|study&gt;[Study(click: ?study)[(display: &quot;Study&quot;)]]
+	}]
+	(if:  $age &gt;= 12)[{
+		|socialize&gt;[Socialize(click: ?socialize)[(display: &quot;Socialize&quot;)]]
+	}]
+	(if:  $age &gt;= 12)[{
+		|shopping&gt;[Shopping(click: ?shopping)[(display: &quot;Shopping&quot;)]]
+	}]
+	(if:  $age &gt;= 18)[{
+		|work&gt;[Work(click: ?work)[(display: &quot;Work&quot;)]]
+	}]
+	(if:  $age &gt;= 18)[{
+		|college&gt;[College(click: ?college)[(display: &quot;College&quot;)]]
+	}]
+	(if:  $age &gt;= 16)[{
+		|excercise&gt;[Excercise(click: ?excercise)[(display: &quot;Excercise&quot;)]]
+	}]
+&lt;/div&gt;
+  &lt;div class=&quot;column&quot; style=&quot;background-color:#bbb;&quot;&gt;
+	&lt;!--Special storylets --&gt;
+	(if:  $age &gt;= 0)[{
+		|getMarried&gt;[Get Married(click: ?getMarried)[(display: &quot;GetMarried&quot;)]]
+	}]
+	(if:  $age &gt;= 0)[{
+		|party&gt;[Party(click: ?party)[(display: &quot;Party&quot;)]]
+	}]
+]
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Cry" tags="" position="46,340" size="100,100">(set: $stress to it - 15)
 (replace: ?stress)[$stress]
 (replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="46,545" size="100,100">{
 (set: $timeline to 1)
@@ -108,7 +162,7 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 (replace: ?instrument)[Play Instrument(click: ?intrument)[(display: &quot;Instrument&quot;)]]</tw-passagedata><tw-passagedata pid="13" name="Sports" tags="" position="148,340" size="100,100">(set: $stress to it - 10)
 (set: $socialLevel to it + 10)
 (replace: ?stress)[$stress]
-(replace: ?sports)[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="" tags="" position="148,443" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Testing Git" tags="" position="955,541" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Passing Time" tags="header" position="718,393" size="100,100">{
+(replace: ?sports)[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="" tags="" position="148,443" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Passing Time" tags="header" position="718,393" size="100,100">{
 (if: (passage:)&#39;s tags contains &quot;timed&quot;) [
 	(live: 1s)[
 		(if: $timeline is 1)[
@@ -117,7 +171,7 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 	]
 ]
 }
-</tw-passagedata><tw-passagedata pid="17" name="Study" tags="" position="150,133" size="100,100">(set: $stress to it - 15)
+</tw-passagedata><tw-passagedata pid="16" name="Study" tags="" position="150,133" size="100,100">(set: $stress to it - 15)
 (replace: ?stress)[$stress]
 (replace: ?study)[Cry(click: ?study)[(display: &quot;Study&quot;)]]</tw-passagedata></tw-storydata>
 
