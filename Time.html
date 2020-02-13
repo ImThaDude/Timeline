@@ -20,14 +20,6 @@
   box-sizing: border-box;
 }
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
 /* Clear floats after the columns */
 .row:after {
   content: &quot;&quot;;
@@ -36,14 +28,12 @@
 }
 &lt;/style&gt;
 &lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;column&quot; style=&quot;background-color:#aaa;&quot;&gt;
-(set: $timeline to 1)
-{|cry&gt;[Cry(click: ?cry)[
-(display: &quot;Cry&quot;)]]}
-
-(live: 1s)[
-	(if:  $age &gt; 5) [{
-		|play&gt;[Play(click: ?play)[(display: &quot;Play&quot;)]]
+  &lt;div class=&quot;column&quot; style=&quot;background-color:#aaa;&quot;&gt;{
+{(set: $timeline to 1)
+|cry&gt;[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]}
+(live: 1s)
+	[(if:  $age &gt; 5) [{
+		[|play&gt;[Play(click: ?play)[(display: &quot;Play&quot;)]]]
 	}]
 	(if: ($age &gt;= 4) and ($age &lt; 6) and ($kinderComplete is 0))	[{
 		[[[Kindergarten-&gt;Kindergarten]]]
@@ -78,9 +68,11 @@
 	(if:  $age &gt;= 16)[{
 		|excercise&gt;[Excercise(click: ?excercise)[(display: &quot;Excercise&quot;)]]
 	}]
+]}
 &lt;/div&gt;
-  &lt;div class=&quot;column&quot; style=&quot;background-color:#bbb;&quot;&gt;
+&lt;div class=&quot;column&quot; style=&quot;background-color:#bbb;&quot;&gt;
 	&lt;!--Special storylets --&gt;
+(live: 1s) [
 	(if:  $age &gt;= 0)[{
 		|getMarried&gt;[Get Married(click: ?getMarried)[(display: &quot;GetMarried&quot;)]]
 	}]
@@ -94,7 +86,7 @@
 (replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="46,545" size="100,100">{
 (set: $timeline to 1)
 
-(set: $age to 0)
+(set: $age to 40)
 
 (set: $money to 0)
 (set: $stress to 0)
