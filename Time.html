@@ -15,24 +15,81 @@
 (if: $timeline is 1)[
 (set: $age to it + 0.20)
 (replace: ?age)[$age]]
-]</tw-passagedata><tw-passagedata pid="2" name="Money" tags="" position="46,133" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Hub" tags="" position="447,302" size="100,100">(set: $timeline to 1)
+]</tw-passagedata><tw-passagedata pid="2" name="Money" tags="" position="46,133" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Hub" tags="" position="691,316" size="100,100">(set: $timeline to 1)
 
 |cry&gt;[Cry
 (click: ?cry)[(display: &quot;Cry&quot;)]]
 
 (live: 1s)[
-	(if:  $age &gt; 5)[|play&gt;[Play(click: ?play)[(display: &quot;Play&quot;)]]]
-	
+	(if:  $age &gt; 5)[
+		|play&gt;[Play(click: ?play)[(display: &quot;Play&quot;)]]]
 	(if: ($age &gt;= 5) and ($age &lt; 6) and ($kinderComplete is 0))[
-	[[Kindergarten-&gt;Kindergarten]]
-]]
+		[[Kindergarten-&gt;Kindergarten]]]
+	(if:  $age &gt;= 6)[
+		|instrument&gt;[Play Instrument(click: ?instrument)[(display: &quot;Instrument&quot;)]]]
+	(if:  $age &gt;= 6)[
+		|sports&gt;[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]]
+	(if:  $age &gt;= 6)[
+		|paint&gt;[Paint(click: ?paint)[(display: &quot;Paint&quot;)]]]
+	(if:  $age &gt;= 6)[
+		|dance&gt;[Dance(click: ?dance)[(display: &quot;Dance&quot;)]]]
+	(if:  $age &gt;= 6)[
+		|act&gt;[Act(click: ?act)[(display: &quot;Act&quot;)]]]
+	(if:  $age &gt;= 6)[
+		|sing&gt;[Paint(click: ?sing)[(display: &quot;Sing&quot;)]]]
+	(if:  $age &gt;= 6)[
+		|playVideoGames&gt;[Play Video Games(click: ?playVideoGames)[(display: &quot;VideoGames&quot;)]]]
+	(if:  $age &gt;= 6)[
+		|read&gt;[Read(click: ?read)[(display: &quot;Read&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|martialArts&gt;[Martial Arts(click: ?martialArts)[(display: &quot;MartialArts&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|cook&gt;[Cook(click: ?cook)[(display: &quot;Cook&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|garden&gt;[Garden(click: ?garden)[(display: &quot;Garden&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|write&gt;[Write(click: ?write)[(display: &quot;Write&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|craft&gt;[Craft(click: ?craft)[(display: &quot;Craft&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|socialMedia&gt;[Social Media(click: ?socialMedia)[(display: &quot;SocialMedia&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|videoEdit&gt;[Video Edit(click: ?videoEdit)[(display: &quot;VideoEdit&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|fish&gt;[Fish(click: ?fish)[(display: &quot;Fish&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|hunt&gt;[Hunt(click: ?hunt)[(display: &quot;Hunt&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|mortorSports&gt;[Motor Sports(click: ?motorSports)[(display: &quot;MotorSports&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|shopping&gt;[Shopping(click: ?shopping)[(display: &quot;Shopping&quot;)]]]
+	(if:  $age &gt;= 12)[
+		|photography&gt;[Photograhpy(click: ?photography)[(display: &quot;Photography&quot;)]]]
+	(if:  $age &gt;= 16)[
+		|partTime&gt;[Work part time(click: ?partTime)[(display: &quot;PartTime&quot;)]]]
+	(if:  $age &gt;= 18)[
+		|fullTime&gt;[Work full time(click: ?fullTime)[(display: &quot;FullTime&quot;)]]]
+	(if:  $age &gt;= 16)[
+		|drive&gt;[Drive(click: ?drive)[(display: &quot;Drive&quot;)]]]
+	(if:  $age &gt;= 18)[
+		|party&gt;[Party(click: ?party)[(display: &quot;Party&quot;)]]]
+	(if:  $age &gt;= 18)[
+		|college&gt;[College(click: ?college)[(display: &quot;College&quot;)]]]
+	(if:  $age &gt;= 18)[
+		|yoga&gt;[Yoga(click: ?yoga)[(display: &quot;Yoga&quot;)]]]
+	(if:  $age &gt;= 21)[
+		|sailing&gt;[Sailing(click: ?sailing)[(display: &quot;Sailing&quot;)]]]
+	(if:  $age &gt;= 16)[
+		|excercise&gt;[Excercise(click: ?excercise)[(display: &quot;Excercise&quot;)]]]
+	(if:  $age &gt;= 18)[
+		|getMarried&gt;[Get Married(click: ?getMarried)[(display: &quot;GetMarried&quot;)]]]
+]
 
 You are |age&gt;[$age] years old. 
 You have |money&gt;[$money] cash.
 You have |stress&gt;[$stress] stress.</tw-passagedata><tw-passagedata pid="4" name="Cry" tags="" position="46,342" size="100,100">(set: $stress to it - 15)
 (replace: ?stress)[$stress]
-(replace: ?cry)[Cry
-(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="46,558" size="100,100">(set: $timeline to 1)
+(replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="46,558" size="100,100">(set: $timeline to 1)
 
 (set: $age to 0)
 
@@ -53,17 +110,16 @@ You have |stress&gt;[$stress] stress.</tw-passagedata><tw-passagedata pid="4" na
 (set: $kinderComplete to 0)</tw-passagedata><tw-passagedata pid="6" name="Play" tags="" position="46,238" size="100,100">(set: $stress to it - 25)
 (set: $socialLevel to it + 2)
 (replace: ?stress)[$stress]
-(replace: ?play)[Play
-(click: ?play)[(display: &quot;Play&quot;)]]</tw-passagedata><tw-passagedata pid="7" name="Kindergarten" tags="" position="581,302" size="100,100">(set: $timeline to 0)
+(replace: ?play)[Play(click: ?play)[(display: &quot;Play&quot;)]]</tw-passagedata><tw-passagedata pid="7" name="Kindergarten" tags="" position="852,316" size="100,100">(set: $timeline to 0)
 
 Its your first day of class and the teacher has a smile that is lighting up the room. They have the classroom completely organized ready to for the school year to begin. 
 
 [[Take seat-&gt;KinderGood-1]]
-[[Sneak outside-&gt;KinderBad-1]]</tw-passagedata><tw-passagedata pid="8" name="KinderGood-1" tags="" position="768,403" size="100,100">Today they focused on getting to know everyone. They made sure people rised their hands, didn&#39;t interrupt others, and that everyone clapped after each introduction.
+[[Sneak outside-&gt;KinderBad-1]]</tw-passagedata><tw-passagedata pid="8" name="KinderGood-1" tags="" position="1012,417" size="100,100">Today they focused on getting to know everyone. They made sure people rised their hands, didn&#39;t interrupt others, and that everyone clapped after each introduction.
 
-[[Continue.-&gt;KinderGood-2]]</tw-passagedata><tw-passagedata pid="9" name="KinderBad-1" tags="" position="772,252" size="100,100">Outside the classroom you see the world differently. It&#39;s the first time away from any guardians and their sense of safety. You try to leave the school grounds but cannot. There is a sense of adventure growing within. 
+[[Continue.-&gt;KinderGood-2]]</tw-passagedata><tw-passagedata pid="9" name="KinderBad-1" tags="" position="1016,266" size="100,100">Outside the classroom you see the world differently. It&#39;s the first time away from any guardians and their sense of safety. You try to leave the school grounds but cannot. There is a sense of adventure growing within. 
 
-[[Continue.-&gt;KinderBad-2]]</tw-passagedata><tw-passagedata pid="10" name="KinderGood-2" tags="" position="580,440" size="100,100">
+[[Continue.-&gt;KinderBad-2]]</tw-passagedata><tw-passagedata pid="10" name="KinderGood-2" tags="" position="824,454" size="100,100">
 Its the end of the year now. Gradutation has everyone in a good mood. You learned the alphabet, grammar, geometry, addition, substraction and more. 
 
 
@@ -78,7 +134,9 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 (set: $socialLevel to it + 10)
 (set: $careerLevel to it + 0)
 (set: $familyLevel to it + 5)
-(set: $loveLevel to it + 5)</tw-passagedata><tw-passagedata pid="11" name="KinderBad-2" tags="" position="586,165" size="100,100">Graduation feels scary. You were so confortable in this environment. So free to blend into the crowd and escape as easily too.
+(set: $loveLevel to it + 5)
+
+(set: $kinderComplete to 1)</tw-passagedata><tw-passagedata pid="11" name="KinderBad-2" tags="" position="830,179" size="100,100">Graduation feels scary. You were so confortable in this environment. So free to blend into the crowd and escape as easily too.
 
 [[Continue.-&gt;Hub]]
 
@@ -91,7 +149,15 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 (set: $socialLevel to it + 7)
 (set: $careerLevel to it + 0)
 (set: $familyLevel to it + 10)
-(set: $loveLevel to it + 8)</tw-passagedata></tw-storydata>
+(set: $loveLevel to it + 8)
+
+(set: $kinderComplete to 1)</tw-passagedata><tw-passagedata pid="12" name="Instrument" tags="" position="150,237.5" size="100,100">(set: $stress to it + 15)
+(set: $intelligence to it + 10)
+(replace: ?stress)[$stress]
+(replace: ?instrument)[Play Instrument(click: ?intrument)[(display: &quot;Instrument&quot;)]]</tw-passagedata><tw-passagedata pid="13" name="Sports" tags="" position="149,342.5" size="100,100">(set: $stress to it - 10)
+(set: $socialLevel to it + 10)
+(replace: ?stress)[$stress]
+(replace: ?sports)[Play sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="" tags="" position="149,450.5" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
