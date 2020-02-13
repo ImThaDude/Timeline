@@ -45,7 +45,7 @@
 (replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="29,178" size="100,100">{
 (set: $timeline to 1)
 
-(set: $age to 60)
+(set: $age to 0)
 
 (set: $money to 540000)
 (set: $stress to 0)
@@ -117,7 +117,7 @@ Its the end of the year now. Gradutation has everyone in a good mood. You learne
 (set: $charisma to it + 1)
 (replace: ?stress)[$stress]
 (replace: ?sports)[Sports(click: ?sports)[(display: &quot;Sports&quot;)]]</tw-passagedata><tw-passagedata pid="14" name="Shopping" tags="" position="130,508" size="100,100">(set: $stress to it - 3 * $age)
-(set: $money to it - 300 * $age)
+(set: $money to it - 30 * $age * $age)
 (set: $charisma to it + 1 * $age / 6)
 (replace: ?stress)[$stress]
 (replace: ?shopping)[Shopping(click: ?shopping)[(display: &quot;Shopping&quot;)]]</tw-passagedata><tw-passagedata pid="15" name="Passing Time" tags="header" position="365,55" size="100,100">{
@@ -182,7 +182,7 @@ You lost.</tw-passagedata><tw-passagedata pid="20" name="Accomplishments" tags="
 </tw-passagedata><tw-passagedata pid="22" name="GameOver-Stress" tags="nodisplay" position="654.5,689" size="100,100">You overworked yourself.
 
 You lost.</tw-passagedata><tw-passagedata pid="23" name="Work" tags="" position="28.5,613" size="100,100">(set: $stress to it + 3 * ($careerlevel + 1))
-(set: $money to it + (500 * ((60 * ($careerlevel + 1) - $age) / 30)))
+(set: $money to it + (1000 * ((60 * ($careerlevel + 1) - $age) / 30)))
 (replace: ?stress)[$stress]
 (replace: ?work)[Work(click: ?work)[(display: &quot;Work&quot;)]]</tw-passagedata></tw-storydata>
 
