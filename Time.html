@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="header" position="27,53" size="100,100">|statsdisplay&gt;[(display: &quot;Status Display&quot;)](if: (passage:)&#39;s tags contains &quot;nodisplay&quot;) [] (else:) [(live: 1s) [(replace: ?statsdisplay) [(display: &quot;Status Display&quot;)]]]</tw-passagedata><tw-passagedata pid="2" name="Money" tags="header" position="134,52" size="100,100">{
+<tw-storydata name="Time" startnode="3" creator="Twine" creator-version="2.3.5" ifid="58E52116-1DFD-4A43-A373-6EE33738C136" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Age" tags="header" position="27,53" size="100,100">(if: (passage:)&#39;s tags contains &quot;nodisplay&quot;) [] (else:) [|statsdisplay&gt;[(display: &quot;Status Display&quot;)](live: 1s) [(replace: ?statsdisplay) [(display: &quot;Status Display&quot;)]]]</tw-passagedata><tw-passagedata pid="2" name="Money" tags="header" position="134,52" size="100,100">{
 (if: (passage:)&#39;s tags contains &quot;timed&quot;) [
 	(live: 1s)[
 		(set: $money to $money - 6000)
@@ -40,10 +40,12 @@
 &lt;/div&gt;
 }</tw-passagedata><tw-passagedata pid="4" name="Cry" tags="" position="30,320" size="100,100">(set: $stress to it - (2 + $age / 10))
 (replace: ?stress)[$stress]
-(replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="30,178" size="100,100">{
+(replace: ?cry)[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]</tw-passagedata><tw-passagedata pid="5" name="InitializeVariables" tags="startup" position="27,180" size="100,100">{
+(set: $updateTime to 1)
+
 (set: $timeline to 1)
 
-(set: $age to 6)
+(set: $age to 0)
 
 (set: $money to 540000)
 (set: $stress to 0)
@@ -194,21 +196,33 @@ Your see one of your friends is looking at it and then looks at you.
 
 &quot;Just eat the veggies in that case.&quot;
 
-Moms always know.(click: &quot;Moms always know.&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="39" name="Eat Anyways" tags="" position="2947,831" size="100,100">You compose yourself and put all might into eating the meal given to you.
+Moms always know.(click: &quot;Moms always know.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rch&quot;)</tw-passagedata><tw-passagedata pid="39" name="Eat Anyways" tags="" position="2947,831" size="100,100">You compose yourself and put all might into eating the meal given to you.
 
 Sometimes people do things for you and even though you might not like it you should show appreciation.
 
-Ugh, that was not a good meal.(click: &quot;Ugh, that was not a good meal.&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="40" name="Feed it to the dog" tags="" position="3006,948" size="100,100">As you look to the side, the good ol pooch is looking at your meal intently.
+Ugh, that was not a good meal.(click: &quot;Ugh, that was not a good meal.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rstr&quot;)</tw-passagedata><tw-passagedata pid="40" name="Feed it to the dog" tags="" position="3006,948" size="100,100">As you look to the side, the good ol pooch is looking at your meal intently.
 
 As your mom looks away, you quickly swipe your meal into the plate.
 
 Doggo is happy, you are happy. What could go wrong?
 
-Pooch has explosive diahrrea for the next week.(click: &quot;Pooch has explosive diahrrea for the next week.&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="41" name="Family" tags="" position="2819,828" size="100,100">You pick up your phone and call your siblings and your parents. You tell them that you love them.
+Pooch has explosive diahrrea for the next week.(click: &quot;Pooch has explosive diahrrea for the next week.&quot;)[(go-to: &quot;Hub&quot;)]
 
-I am close to my family.(click: &quot;I am close to my family.&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="42" name="Relative" tags="" position="2708,828" size="100,100">You have not heard or seen your cousing for years. Why not call him through the phone?
+(display: &quot;.rint&quot;)</tw-passagedata><tw-passagedata pid="41" name="Family" tags="" position="2819,828" size="100,100">You pick up your phone and call your siblings and your parents. You tell them that you love them.
 
-Talk about your next adventure...(click: &quot;Talk about your next adventure...&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="43" name="Friend" tags="" position="2607,827" size="100,100">Your friend answers the phone.
+I am close to my family.(click: &quot;I am close to my family.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rfam&quot;)
+(display: &quot;.rfam&quot;)</tw-passagedata><tw-passagedata pid="42" name="Relative" tags="" position="2708,828" size="100,100">You have not heard or seen your cousing for years. Why not call him through the phone?
+
+Talk about your next adventure...(click: &quot;Talk about your next adventure...&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rfam&quot;)
+(display: &quot;.rint&quot;)</tw-passagedata><tw-passagedata pid="43" name="Friend" tags="" position="2607,827" size="100,100">Your friend answers the phone.
 
 &quot;Hello?&quot;
 
@@ -217,49 +231,75 @@ Talk about your next adventure...(click: &quot;Talk about your next adventure...
 &quot;Woooo! Let me save it...&quot;
 
 Hour long call.(click: &quot;Hour long call.&quot;)[(go-to: &quot;Hub&quot;)]
-Short test call.(click: &quot;Short test call.&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="44" name="Stranger" tags="" position="2503,828" size="100,100">&quot;Hello?&quot;
+Short test call.(click: &quot;Short test call.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.hrch&quot;)
+(display: &quot;.hrint&quot;)</tw-passagedata><tw-passagedata pid="44" name="Stranger" tags="" position="2503,828" size="100,100">&quot;Hello?&quot;
 
 &quot;So I was told of this challenge to call my neighbor phone? Who am I speaking with?&quot;
 
 &quot;Oh. Joseph? How can I help you?&quot;
 
-&quot;Nothing, How are you?...&quot;(click: &quot;\&quot;Nothing, How are you?...\&quot;&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="45" name="Grandparent&#39;s" tags="" position="1686,826" size="100,100">Grandpa and Grandma are really happy to have you.
+&quot;Nothing, How are you?...&quot;(click: &quot;\&quot;Nothing, How are you?...\&quot;&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rch&quot;)</tw-passagedata><tw-passagedata pid="45" name="Grandparent&#39;s" tags="" position="1690,823" size="100,100">Grandpa and Grandma are really happy to have you.
 
 You learn a lot aabout your legacy and what your family has been through.
 
-Wow, grandpa had hair?!(click: &quot;Wow, grandpa had hair?!&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="46" name="Cousin&#39;s" tags="" position="1793,821" size="100,100">You go to your cousins place. For some reason, your cousins house always has more stuff to do than when you are at home.
+Wow, grandpa had hair?!(click: &quot;Wow, grandpa had hair?!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rfam&quot;)
+(display: &quot;.rwis&quot;)</tw-passagedata><tw-passagedata pid="46" name="Cousin&#39;s" tags="" position="1793,821" size="100,100">You go to your cousins place. For some reason, your cousins house always has more stuff to do than when you are at home.
 
 You and your cousins play games, wrestle and adventure without sleep until the sleepover is over.
 
-I miss it already.(click: &quot;I miss it already.&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="47" name="Friend&#39;s" tags="" position="1895,823" size="100,100">You go to your friend&#39;s house and decide to sleepover.
+You seem to have been destressed by this. (-100 Stress)
+
+I miss it already.(click: &quot;I miss it already.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rstre&quot;)</tw-passagedata><tw-passagedata pid="47" name="Friend&#39;s" tags="" position="1895,823" size="100,100">You go to your friend&#39;s house and decide to sleepover.
 
 The whole time you decide to go outside and have an adventure before coming back to the house to play videogames all night.
 
-Sleepover! Heck Yeah!(click: &quot;Sleepover! Heck Yeah!&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="48" name="Pick it up" tags="" position="667,933" size="100,100">You place the duck in a kennel and bring it some food and water. Your parents tell you it can stay until tommorrow afternoon.
+Sleepover! Heck Yeah!(click: &quot;Sleepover! Heck Yeah!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rch&quot;)</tw-passagedata><tw-passagedata pid="48" name="Pick it up" tags="" position="667,933" size="100,100">You place the duck in a kennel and bring it some food and water. Your parents tell you it can stay until tommorrow afternoon.
 
 [[Continue-&gt;duckReveal]]</tw-passagedata><tw-passagedata pid="49" name="Steal Cartridge" tags="" position="1080,1114" size="100,100">You take the cartridge and put it in your pocket. Nobody noticed and you canot wait to get home and play Hello Kitten: Endgame.
 
-Heck yes! Cannot wait to kill those zombies!(click: &quot;Heck yes! Cannot wait to kill those zombies!&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="50" name="Ask parents to buy the game." tags="" position="888,984" size="100,100">You beg your parents to buy the game for you. Sadly, your parents recently learned that spoiling children bring a downbringing.
+Heck yes! Cannot wait to kill those zombies!(click: &quot;Heck yes! Cannot wait to kill those zombies!&quot;)[(go-to: &quot;Hub&quot;)]
 
-Being a responsible parent sucks.(click: &quot;Being a responsible parent sucks.&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="51" name="Inform The Manager" tags="" position="992,988" size="100,100">&quot;Hey there is a broken box in the counter. Someone could steal it.&quot; You tell the manager while pointing at the box.
+(display: &quot;.hrch&quot;)
+(display: &quot;.hrint&quot;)</tw-passagedata><tw-passagedata pid="50" name="Ask parents to buy the game." tags="" position="888,984" size="100,100">You beg your parents to buy the game for you. Sadly, your parents recently learned that spoiling children bring a downbringing.
+
+Being a responsible parent sucks.(click: &quot;Being a responsible parent sucks.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rwis&quot;)</tw-passagedata><tw-passagedata pid="51" name="Inform The Manager" tags="" position="992,988" size="100,100">&quot;Hey there is a broken box in the counter. Someone could steal it.&quot; You tell the manager while pointing at the box.
 
 The manager looks at you and smiles.
 
 &quot;Thanks for telling us.&quot; The manager rewards your honesty with a candy box.
 
-Yeee. Candy(click: &quot;Candy&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="52" name="Disencourage Friends" tags="" position="1103,986" size="100,100">&quot;Hey guys, we should go.&quot; You tell your friends as to dissuade them.
+Yeee. Candy(click: &quot;Candy&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.taghonest&quot;)</tw-passagedata><tw-passagedata pid="52" name="Disencourage Friends" tags="" position="1103,986" size="100,100">&quot;Hey guys, we should go.&quot; You tell your friends as to dissuade them.
 
 As you leave, an adult comes out and ask you guys to stop. As soon as your friend hears this, he bolts and you run away too.
 
 You guys successfully escape with Hello Kitten: Endgame.
 
-Dishonest. But, Hell yeah zombies!(click: &quot;Dishonest. But, Hell yeah zombies!&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="53" name="Look Away" tags="" position="1217,984" size="100,100">Your friend shakes the box and puts the game on his pocket.
+Dishonest. But, Hell yeah zombies!(click: &quot;Dishonest. But, Hell yeah zombies!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.hrch&quot;)
+(display: &quot;.hrstr&quot;)</tw-passagedata><tw-passagedata pid="53" name="Look Away" tags="" position="1217,984" size="100,100">Your friend shakes the box and puts the game on his pocket.
 
 As you leave, an adult comes out and ask you guys to stop. As soon as your friend hears this, he bolts and you run away too.
 
 You guys successfully escape with Hello Kitten: Endgame.
 
-Dishonest. But, Hell yeah zombies!(click: &quot;Dishonest. But, Hell yeah zombies!&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="54" name="Playing a game" tags="" position="1397,838" size="100,100">You are playing a game of freeze tag at school you are it and cannot seem to make progress in freezing everyone.
+Dishonest. But, Hell yeah zombies!(click: &quot;Dishonest. But, Hell yeah zombies!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rstr&quot;)</tw-passagedata><tw-passagedata pid="54" name="Playing a game" tags="" position="1397,838" size="100,100">You are playing a game of freeze tag at school you are it and cannot seem to make progress in freezing everyone.
 
 [[Continue-&gt;tag]]</tw-passagedata><tw-passagedata pid="55" name="Show and tell" tags="" position="1513,839" size="100,100">Today is show and tell at school and you have brought your favorite toy. After your are done presenting another student shares his toy too. It&#39;s the same as yours. You feel a sense of excitement because someone likes the same toy as you do. 
 
@@ -269,19 +309,25 @@ Dishonest. But, Hell yeah zombies!(click: &quot;Dishonest. But, Hell yeah zombie
 [[Take the one with scratches-&gt;scratchedToy]]</tw-passagedata><tw-passagedata pid="57" name="tag" tags="" position="1339,963" size="100,100">You notice a player running without being touched and unfrozen. 
 
 [[You call out the cheating.]]
-[[Give up]]</tw-passagedata><tw-passagedata pid="58" name="niceToy" tags="" position="1617,1095" size="100,100">(goto: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="59" name="scratchedToy" tags="" position="1512,1095" size="100,100">(goto: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="60" name="You call out the cheating." tags="" position="1290,1095" size="100,100">Fed up with this game you run towards the cheater call out their cheating. The turn and explain, &quot;I have diabetes, I need to go and get my insulin shot. I&#39;ll be right back.&quot; Struck from this news you stop playing.
-
-Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="61" name="Give up" tags="" position="1392,1094" size="100,100">You walk behind the ball wall and sit for the rest of recess.
-
-Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="62" name="duckReveal" tags="" position="670,1045" size="100,100">After your parents leave your friend crys out, &quot;I injured the duck. I wanted to see if I could hit it with a rock. You didn&#39;t see me do it and I could not tell you because you looked so concerned and wanted to help it out.&quot;
+[[Give up]]</tw-passagedata><tw-passagedata pid="58" name="niceToy" tags="" position="1617,1095" size="100,100">(display: &quot;.rch&quot;)
+(goto: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="59" name="scratchedToy" tags="" position="1512,1095" size="100,100">(display: &quot;.rint&quot;)
+(goto: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="60" name="You call out the cheating." tags="" position="1290,1095" size="100,100">Fed up with this game you run towards the cheater call out their cheating. They turn and explain, &quot;I have diabetes, I need to go and get my insulin shot. I&#39;ll be right back.&quot; Struck from this news you stop playing.
 
 Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
 
-(set: $tags to $tags + (array: &quot;hero&quot;))</tw-passagedata><tw-passagedata pid="63" name="Throw rock at the duck" tags="" position="787,932" size="100,100">Your lack of empathy has forced to join in abusing this creature. 
+(display: &quot;.rstr&quot;)</tw-passagedata><tw-passagedata pid="61" name="Give up" tags="" position="1392,1094" size="100,100">You walk behind the ball wall and sit for the rest of recess.
 
 Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
 
-(set: $strength to $strength + 180)</tw-passagedata><tw-passagedata pid="64" name="Work" tags="" position="29,583" size="100,100">(set: $stress to it + 3 * ($careerlevel + 1))
+(display: &quot;.rwis&quot;)</tw-passagedata><tw-passagedata pid="62" name="duckReveal" tags="" position="670,1045" size="100,100">After your parents leave your friend crys out, &quot;I injured the duck. I wanted to see if I could hit it with a rock. You didn&#39;t see me do it and I could not tell you because you looked so concerned and wanted to help it out.&quot;
+
+Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.taghero&quot;)</tw-passagedata><tw-passagedata pid="63" name="Throw rock at the duck" tags="" position="787,932" size="100,100">Your lack of empathy has forced to join in abusing this creature. 
+
+Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rstr&quot;)</tw-passagedata><tw-passagedata pid="64" name="Work" tags="" position="29,583" size="100,100">(set: $stress to it + 3 * ($careerlevel + 1))
 (set: $money to it + (1000 * ((60 * ($careerlevel + 1) - $age) / 30)))
 (replace: ?stress)[$stress]
 (replace: ?money)[$money]
@@ -306,12 +352,12 @@ You have $|money&gt;[$money] cash.
 You have |stress&gt;[$stress] stress.</tw-passagedata><tw-passagedata pid="74" name="Dinner Storylet" tags="" position="2995.5,601" size="100,100">(if:  $age &gt;= 14 and $age &lt;= 19 and not ($sa contains 7))[
 		[[Dinner with the family-&gt;Dinner]]]</tw-passagedata><tw-passagedata pid="75" name="WeddingGuest Storylet" tags="" position="3288.5,599" size="100,100">(if:  $age &gt;= 18 and $age &lt;= 25 and not ($sa contains 8))[
 	[[Wedding-&gt;WeddingGuest]]]</tw-passagedata><tw-passagedata pid="76" name="PartyHouse Storylet" tags="" position="3607.5,600" size="100,100">(if:  $age &gt;= 20 and $age &lt;= 25 and not ($sa contains 9))[
-	[[Party-&gt;PartyHouse]]]</tw-passagedata><tw-passagedata pid="77" name="GetMarried Storylet" tags="" position="671.5,1285" size="100,100">(if:  $age &gt;= 22 and not ($sa contains 10))[{
-	[[Get Married-&gt;GetMarried]]]</tw-passagedata><tw-passagedata pid="78" name="Storylets Display" tags="" position="1107.5,414" size="100,100">{{(display: &quot;InjuredAnimal Storylet&quot;)}{(display: &quot;Store Storylet&quot;)}{(display: &quot;SchoolDays Storylet&quot;)}{(display: &quot;Sleepover Storylet&quot;)}{(display: &quot;birthdayChild Storylet&quot;)}{(display: &quot;FirstPhone Storylet&quot;)}{(display: &quot;Dinner Storylet&quot;)}{(display: &quot;PartyHouse Storylet&quot;)}{(display: &quot;GetMarried Storylet&quot;)}}</tw-passagedata><tw-passagedata pid="79" name="Options Display" tags="" position="415.5,250" size="100,100">{
+	[[Party-&gt;PartyHouse]]]</tw-passagedata><tw-passagedata pid="77" name="GetMarried Storylet" tags="" position="671.5,1285" size="100,100">(if:  $age &gt;= 22 and not ($sa contains 10))[
+	[[Get Married-&gt;GetMarried]]]</tw-passagedata><tw-passagedata pid="78" name="Storylets Display" tags="" position="1107.5,414" size="100,100">{{(display: &quot;UguGaga Storylet&quot;)}{(display: &quot;InjuredAnimal Storylet&quot;)}{(display: &quot;Abduction Storylet&quot;)}{(display: &quot;Store Storylet&quot;)}{(display: &quot;SchoolDays Storylet&quot;)}{(display: &quot;Sleepover Storylet&quot;)}{(display: &quot;birthdayChild Storylet&quot;)}{(display: &quot;FirstPhone Storylet&quot;)}{(display: &quot;Dinner Storylet&quot;)}{(display: &quot;PartyHouse Storylet&quot;)}{(display: &quot;GetMarried Storylet&quot;)}}</tw-passagedata><tw-passagedata pid="79" name="Options Display" tags="" position="415.5,250" size="100,100">{
 	[{
 		|cry&gt;[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]
 	}]
-	(if:  $age &gt; 5) [{
+	(if:  $age &gt; 3) [{
 		|play&gt;[Play(click: ?play)[(display: &quot;Play&quot;)]]
 	}]
 	(if:  $age &gt;= 6)[{
@@ -329,7 +375,7 @@ You have |stress&gt;[$stress] stress.</tw-passagedata><tw-passagedata pid="74" n
 	(if:  $age &gt;= 12)[{
 		|shopping&gt;[Shopping(click: ?shopping)[(display: &quot;Shopping&quot;)]]
 	}]
-	(if:  $age &gt;= 15)[{
+	(if:  $age &gt;= 16)[{
 		|work&gt;[Work(click: ?work)[(display: &quot;Work&quot;)]]
 	}]
 	(if:  $age &gt;= 16)[{
@@ -337,8 +383,29 @@ You have |stress&gt;[$stress] stress.</tw-passagedata><tw-passagedata pid="74" n
 	}]
 }</tw-passagedata><tw-passagedata pid="80" name="PartyHouse" tags="" position="3607.5,723" size="100,100">
 
-(set: $sa to $sa + (array: 9))</tw-passagedata><tw-passagedata pid="81" name="GetMarried" tags="" position="672.5,1394" size="100,100">(set: $sa to $sa + (array: 10))</tw-passagedata><tw-passagedata pid="82" name="Leave it alone" tags="" position="552,823" size="100,100">(set: $wisdom to $wisdom + 1)
-(go-to: Hub)</tw-passagedata></tw-storydata>
+(set: $sa to $sa + (array: 9))</tw-passagedata><tw-passagedata pid="81" name="GetMarried" tags="" position="672.5,1394" size="100,100">(set: $sa to $sa + (array: 10))</tw-passagedata><tw-passagedata pid="82" name="Leave it alone" tags="" position="552,823" size="100,100">(display: &quot;.rwis&quot;)
+(go-to: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="83" name=".rint" tags="" position="1700.5,75" size="100,100">(set: $intelligence to $intelligence + 180)</tw-passagedata><tw-passagedata pid="84" name=".hrint" tags="" position="1817.5,76" size="100,100">(set: $intelligence to $intelligence + 90)</tw-passagedata><tw-passagedata pid="85" name=".rch" tags="" position="1704.5,193" size="100,100">(set: $charisma to $charisma + 180)</tw-passagedata><tw-passagedata pid="86" name=".hrch" tags="" position="1819.5,193" size="100,100">(set: $charisma to $charisma + 90)</tw-passagedata><tw-passagedata pid="87" name=".rstr" tags="" position="1702.5,301" size="100,100">(set: $strength to $strength + 180)</tw-passagedata><tw-passagedata pid="88" name=".hrstr" tags="" position="1822.5,300" size="100,100">(set: $strength to $strength + 90)</tw-passagedata><tw-passagedata pid="89" name=".rfam" tags="" position="2009.5,82" size="100,100">(set: $familyLevel to $familyLevel + 1)</tw-passagedata><tw-passagedata pid="90" name=".rwis" tags="" position="2009.5,193" size="100,100">(set: $wisdom to $wisdom + 1)</tw-passagedata><tw-passagedata pid="91" name=".rcar" tags="" position="2010.5,298" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="92" name=".taghero" tags="" position="2319.5,79" size="100,100">(set: $tags to $tags + (array: &quot;hero&quot;))</tw-passagedata><tw-passagedata pid="93" name=".taghonest" tags="" position="2322.5,186" size="100,100">(set: $tag to $tag + (array: &quot;honest&quot;))</tw-passagedata><tw-passagedata pid="94" name=".rstre" tags="" position="2165.5,83" size="100,100">(set: $stress to $stress - 100)
+(replace: ?stress)[$stress]</tw-passagedata><tw-passagedata pid="95" name="UguGaga" tags="" position="358,873" size="100,100">As you open your eyes in this world you see the greatness that lies ahead of you.
+
+You know that you exists and you are aware of your surroundings.
+
+You also can&#39;t read and took a dump in your diaper. (Stress -50)
+
+Cry(click: &quot;Cry&quot;)[(go-to: &quot;Hub&quot;)]
+
+(set: $sa to $sa + (array: 11))
+(display: &quot;.hrstre&quot;)</tw-passagedata><tw-passagedata pid="96" name=".hrstre" tags="" position="2166.5,192" size="100,100">(set: $stress to $stress - 50)
+(replace: ?stress)[$stress]</tw-passagedata><tw-passagedata pid="97" name="UguGaga Storylet" tags="" position="360.5,752" size="100,100">(if:  $age &gt;= 0 and $age &lt;= 4 and not ($sa contains 11))[
+	[[Ugu Gaga-&gt;UguGaga]]]</tw-passagedata><tw-passagedata pid="98" name="Abduction Storylet" tags="" position="376.5,1131" size="100,100">(if:  $age &gt;= 8 and $age &lt;= 11 and not ($sa contains 12))[
+	[[Candy!-&gt;Abduction]]]</tw-passagedata><tw-passagedata pid="99" name="Abduction" tags="" position="378.5,1251" size="100,100">You go out one day and find candy.
+
+You get into a car and get abducted.
+
+The ransom is $500,000.
+
+What?(click: &quot;What?&quot;)[(go-to: &quot;Hub&quot;)]
+
+(set: $money to $money - 500000)</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
