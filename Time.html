@@ -91,7 +91,7 @@
 	]
 ]
 }
-</tw-passagedata><tw-passagedata pid="11" name="Study" tags="" position="134,583" size="100,100">(set: $stress to it + 3)
+</tw-passagedata><tw-passagedata pid="11" name="Study" tags="" position="134,583" size="100,100">(set: $stress to it + 2)
 (set: $intelligence to it + 3)
 (replace: ?stress)[$stress]
 (replace: ?study)[Study(click: ?study)[(display: &quot;Study&quot;)]]</tw-passagedata><tw-passagedata pid="12" name="Options" tags="" position="306,249" size="100,100">{&lt;div class=&quot;column&quot; style=&quot;background-color:#aaa;&quot;&gt;
@@ -101,7 +101,37 @@
 }</tw-passagedata><tw-passagedata pid="13" name="Storylets" tags="" position="998,414" size="100,100">&lt;div class=&quot;column&quot; style=&quot;background-color:#bbb;&quot;&gt;|storyletsDisplay&gt;[{(display: &quot;Storylets Display&quot;)}](live: 1s) [{(replace: ?storyletsDisplay) [(display: &quot;Storylets Display&quot;)]}]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="GameOver-Money" tags="nodisplay" position="1255,125" size="100,100">Time is money but money is also time.
 
-You lost.</tw-passagedata><tw-passagedata pid="15" name="Accomplishments" tags="" position="1365,125" size="100,100">Tons of if statements really go here showing what you did...</tw-passagedata><tw-passagedata pid="16" name="Stress" tags="header" position="244,53" size="100,100">{
+[[You lost.-&gt;Accomplishments]]</tw-passagedata><tw-passagedata pid="15" name="Accomplishments" tags="" position="1365,125" size="100,100">&lt;!-- Tons of if statements really go here showing what you did...--&gt;You ended with this stats:
+
+	Intelligence: $intelligence
+	Wisdom: $wisdom
+	Charisma: $charisma
+	Strength: $strength
+	
+	Social level: $socialLevel
+	Career level: $careerLevel
+	Family level: $familyLevel
+	Love level: $loveLevel
+	
+Story:
+
+(if: $tags contains &quot;abducted&quot;) [You got kidnapped.] (else: ) [XXX - Abducted]
+(if: $tags contains &quot;hero&quot;) [You were a hero. You saved a duck from death.] (else: ) [XXX - Hero]
+(if: $tags contains &quot;honest&quot;) [You did not steal the video game. The manager really looks up to you.] (else: ) [XXX - Honest]
+(if: $tags contains &quot;hookup&quot;) [You never know where an opportunity might be coming. You got a hookup to boost you.] (else: ) [XXX - Hookup]
+(if: $tags contains &quot;retail&quot;) [You started a job as a manager on retail.] (else: ) [XXX - Retail]
+(if: $tags contains &quot;friend&quot;) [You made a friend along the way.] (else: ) [XXX - Friend]
+(if: $tags contains &quot;lover&quot;) [You fell in love.] (else: ) [XXX - Love1]
+(if: $tags contains &quot;married&quot;) [You got married.] (else: ) [XXX - Love2]
+
+Thanks for playing our game.
+
+
+Timeline by Robert Ramirez and George Quan
+
+
+
+The End.</tw-passagedata><tw-passagedata pid="16" name="Stress" tags="header" position="244,53" size="100,100">{
 (if: (passage:)&#39;s tags contains &quot;timed&quot;) [
 	(live: 1s)[
 		(set: $stress to $stress + $age)
@@ -115,7 +145,7 @@ You lost.</tw-passagedata><tw-passagedata pid="15" name="Accomplishments" tags="
 
 You overworked yourself.
 
-You lost.</tw-passagedata><tw-passagedata pid="18" name="InjuredAnimal" tags="" position="670,708" size="100,100">You and a friend see an injured duck in your back yard what do you do?
+[[You lost.-&gt;Accomplishments]]</tw-passagedata><tw-passagedata pid="18" name="InjuredAnimal" tags="" position="670,708" size="100,100">You and a friend see an injured duck in your back yard what do you do?
 
 [[Help it recover]]
 [[Throw rocks at it]]
@@ -131,7 +161,7 @@ What is it about?
 
 [[Home]]
 [[Park]]
-[[Restuarant]]
+[[Restaurant]]
 [[Amusement Park]]
 
 (set: $sa to $sa + (array: 5))</tw-passagedata><tw-passagedata pid="21" name="WeddingGuest" tags="" position="3290,709" size="100,100">Your at your uncle&#39;s wedding. You are . . .
@@ -172,7 +202,32 @@ What do you do?
 
 [[Pick it up]]</tw-passagedata><tw-passagedata pid="27" name="Throw rocks at it" tags="" position="787,824" size="100,100">As you are staring at the duck a rock glides across your sight and lands near the duck startling it back. 
 
-[[Throw rock at the duck]]</tw-passagedata><tw-passagedata pid="28" name="Home" tags="" position="2046,825" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="29" name="Park" tags="" position="2159,824" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="30" name="Restuarant" tags="" position="2269,830" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="31" name="Amusement Park" tags="" position="2376,826" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="32" name="Flower girl" tags="" position="3182,816" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="33" name="Ring-bearer" tags="" position="3291,817" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="34" name="Just another annoying kid" tags="" position="3398,819" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="35" name="Parents" tags="" position="962,851" size="100,100">You are in the store with your parents and you decide to sneak away to the game section for the latest hits.
+[[Throw rock at the duck]]</tw-passagedata><tw-passagedata pid="28" name="Home" tags="" position="2046,825" size="100,100">One... Two.. Three...
+
+Happy Birthday! Surprise party awaits you and you feel cozy at home. (Stress - 200)
+
+Yay!(click: &quot;Yay!&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.rstre&quot;)
+(display: &quot;.rstre&quot;)</tw-passagedata><tw-passagedata pid="29" name="Park" tags="" position="2159,824" size="100,100">You and your friends decide to celebrate in the park. (Stress - 100)
+
+Picnic Party!(click: &quot;Picnic Party!&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.rstre&quot;)
+(display: &quot;.hrch&quot;)</tw-passagedata><tw-passagedata pid="30" name="Restaurant" tags="" position="2269,830" size="100,100">You and the family go to Denny&#39;s.
+
+A great meal that fills you up. (Stress - 100)
+
+Skillet!(click: &quot;Skillet!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rfam&quot;)
+(display: &quot;.rint&quot;)</tw-passagedata><tw-passagedata pid="31" name="Amusement Park" tags="" position="2376,826" size="100,100">You and your family go to disney. (Stress - 100)
+
+Mickey A-HA!(click: &quot;Mickey A-HA!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rfam&quot;)
+(display: &quot;.rch&quot;)</tw-passagedata><tw-passagedata pid="32" name="Flower girl" tags="" position="3185,820" size="100,100">(display: &quot;.rch&quot;)
+(goto: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="33" name="Ring-bearer" tags="" position="3291,817" size="100,100">(display: &quot;.rint&quot;)
+(goto: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="34" name="Just another annoying kid" tags="" position="3398,819" size="100,100">(display: &quot;.rstr&quot;)
+(goto: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="35" name="Parents" tags="" position="962,851" size="100,100">You are in the store with your parents and you decide to sneak away to the game section for the latest hits.
 
 You find that there is a damaged box and the game cartridge of a game you have been looking forward to play is sticking out. You could get away by hiding it in your pocket.
 
@@ -198,7 +253,7 @@ Your see one of your friends is looking at it and then looks at you.
 
 Moms always know.(click: &quot;Moms always know.&quot;)[(go-to: &quot;Hub&quot;)]
 
-(display: &quot;.rch&quot;)</tw-passagedata><tw-passagedata pid="39" name="Eat Anyways" tags="" position="2947,831" size="100,100">You compose yourself and put all might into eating the meal given to you.
+(display: &quot;.rch&quot;)</tw-passagedata><tw-passagedata pid="39" name="Eat Anyways" tags="" position="2949,834" size="100,100">You compose yourself and put all might into eating the meal given to you.
 
 Sometimes people do things for you and even though you might not like it you should show appreciation.
 
@@ -217,7 +272,7 @@ Pooch has explosive diahrrea for the next week.(click: &quot;Pooch has explosive
 I am close to my family.(click: &quot;I am close to my family.&quot;)[(go-to: &quot;Hub&quot;)]
 
 (display: &quot;.rfam&quot;)
-(display: &quot;.rfam&quot;)</tw-passagedata><tw-passagedata pid="42" name="Relative" tags="" position="2708,828" size="100,100">You have not heard or seen your cousing for years. Why not call him through the phone?
+(display: &quot;.rfam&quot;)</tw-passagedata><tw-passagedata pid="42" name="Relative" tags="" position="2708,828" size="100,100">You have not heard or seen your cousin for years. Why not call him through the phone?
 
 Talk about your next adventure...(click: &quot;Talk about your next adventure...&quot;)[(go-to: &quot;Hub&quot;)]
 
@@ -328,7 +383,7 @@ Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
 Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
 
 (display: &quot;.rstr&quot;)</tw-passagedata><tw-passagedata pid="64" name="Work" tags="" position="29,583" size="100,100">(set: $stress to it + 3 * ($careerlevel + 1))
-(set: $money to it + (1000 * ((60 * ($careerlevel + 1) - $age) / 30)))
+(set: $money to it + (1000 * ((60 * ($careerLevel + 1) - $age) / 30)))
 (replace: ?stress)[$stress]
 (replace: ?money)[$money]
 (replace: ?work)[Work(click: ?work)[(display: &quot;Work&quot;)]]</tw-passagedata><tw-passagedata pid="65" name="Exercise" tags="" position="340,584" size="100,100">(set: $money to it - 264)
@@ -352,8 +407,8 @@ You have $|money&gt;[$money] cash.
 You have |stress&gt;[$stress] stress.</tw-passagedata><tw-passagedata pid="74" name="Dinner Storylet" tags="" position="2995.5,601" size="100,100">(if:  $age &gt;= 14 and $age &lt;= 19 and not ($sa contains 7))[
 		[[Dinner with the family-&gt;Dinner]]]</tw-passagedata><tw-passagedata pid="75" name="WeddingGuest Storylet" tags="" position="3288.5,599" size="100,100">(if:  $age &gt;= 18 and $age &lt;= 25 and not ($sa contains 8))[
 	[[Wedding-&gt;WeddingGuest]]]</tw-passagedata><tw-passagedata pid="76" name="PartyHouse Storylet" tags="" position="3607.5,600" size="100,100">(if:  $age &gt;= 20 and $age &lt;= 25 and not ($sa contains 9))[
-	[[Party-&gt;PartyHouse]]]</tw-passagedata><tw-passagedata pid="77" name="GetMarried Storylet" tags="" position="671.5,1285" size="100,100">(if:  $age &gt;= 22 and not ($sa contains 10))[
-	[[Get Married-&gt;GetMarried]]]</tw-passagedata><tw-passagedata pid="78" name="Storylets Display" tags="" position="1107.5,414" size="100,100">{{(display: &quot;UguGaga Storylet&quot;)}{(display: &quot;InjuredAnimal Storylet&quot;)}{(display: &quot;Abduction Storylet&quot;)}{(display: &quot;Store Storylet&quot;)}{(display: &quot;SchoolDays Storylet&quot;)}{(display: &quot;Sleepover Storylet&quot;)}{(display: &quot;birthdayChild Storylet&quot;)}{(display: &quot;FirstPhone Storylet&quot;)}{(display: &quot;Dinner Storylet&quot;)}{(display: &quot;PartyHouse Storylet&quot;)}{(display: &quot;GetMarried Storylet&quot;)}}</tw-passagedata><tw-passagedata pid="79" name="Options Display" tags="" position="415.5,250" size="100,100">{
+	[[Party-&gt;PartyHouse]]]</tw-passagedata><tw-passagedata pid="77" name="GetMarried Storylet" tags="" position="898.5,1227" size="100,100">(if:  $age &gt;= 22 and $tags contains &quot;lover&quot; and not ($sa contains 10))[
+	[[Get Married-&gt;GetMarried]]]</tw-passagedata><tw-passagedata pid="78" name="Storylets Display" tags="" position="1107.5,414" size="100,100">{{(display: &quot;UguGaga Storylet&quot;)}{(display: &quot;InjuredAnimal Storylet&quot;)}{(display: &quot;Abduction Storylet&quot;)}{(display: &quot;Store Storylet&quot;)}{(display: &quot;SchoolDays Storylet&quot;)}{(display: &quot;Sleepover Storylet&quot;)}{(display: &quot;birthdayChild Storylet&quot;)}{(display: &quot;FirstPhone Storylet&quot;)}{(display: &quot;Dinner Storylet&quot;)}{(display: &quot;PartyHouse Storylet&quot;)}{(display: &quot;GetMarried Storylet&quot;)}{(display: &quot;Dating Storylet&quot;)}{(display: &quot;DateCooking Storylet&quot;)}{(display: &quot;FlirtingLine Storylet&quot;)}{(display: &quot;IntWorkPromotion Storylet&quot;)}{(display: &quot;SLookForJob Storylet&quot;)}{(display: &quot;MoreThings Storylet&quot;)}}</tw-passagedata><tw-passagedata pid="79" name="Options Display" tags="" position="415.5,250" size="100,100">{
 	[{
 		|cry&gt;[Cry(click: ?cry)[(display: &quot;Cry&quot;)]]
 	}]
@@ -381,10 +436,23 @@ You have |stress&gt;[$stress] stress.</tw-passagedata><tw-passagedata pid="74" n
 	(if:  $age &gt;= 16)[{
 		|exercise&gt;[Exercise(click: ?exercise)[(display: &quot;Exercise&quot;)]]
 	}]
-}</tw-passagedata><tw-passagedata pid="80" name="PartyHouse" tags="" position="3607.5,723" size="100,100">
+	(if: $tags contains &quot;lover&quot;)[{
+		|date&gt;[Date(click: ?date)[(display: &quot;Date&quot;)]]
+	}]
+}</tw-passagedata><tw-passagedata pid="80" name="PartyHouse" tags="" position="3607.5,723" size="100,100">You attend one of your friend&#39;s party. The party is going pretty well and you get to talk and drink with people.
 
-(set: $sa to $sa + (array: 9))</tw-passagedata><tw-passagedata pid="81" name="GetMarried" tags="" position="672.5,1394" size="100,100">(set: $sa to $sa + (array: 10))</tw-passagedata><tw-passagedata pid="82" name="Leave it alone" tags="" position="552,823" size="100,100">(display: &quot;.rwis&quot;)
-(go-to: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="83" name=".rint" tags="" position="1700.5,75" size="100,100">(set: $intelligence to $intelligence + 180)</tw-passagedata><tw-passagedata pid="84" name=".hrint" tags="" position="1817.5,76" size="100,100">(set: $intelligence to $intelligence + 90)</tw-passagedata><tw-passagedata pid="85" name=".rch" tags="" position="1704.5,193" size="100,100">(set: $charisma to $charisma + 180)</tw-passagedata><tw-passagedata pid="86" name=".hrch" tags="" position="1819.5,193" size="100,100">(set: $charisma to $charisma + 90)</tw-passagedata><tw-passagedata pid="87" name=".rstr" tags="" position="1702.5,301" size="100,100">(set: $strength to $strength + 180)</tw-passagedata><tw-passagedata pid="88" name=".hrstr" tags="" position="1822.5,300" size="100,100">(set: $strength to $strength + 90)</tw-passagedata><tw-passagedata pid="89" name=".rfam" tags="" position="2009.5,82" size="100,100">(set: $familyLevel to $familyLevel + 1)</tw-passagedata><tw-passagedata pid="90" name=".rwis" tags="" position="2009.5,193" size="100,100">(set: $wisdom to $wisdom + 1)</tw-passagedata><tw-passagedata pid="91" name=".rcar" tags="" position="2010.5,298" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="92" name=".taghero" tags="" position="2319.5,79" size="100,100">(set: $tags to $tags + (array: &quot;hero&quot;))</tw-passagedata><tw-passagedata pid="93" name=".taghonest" tags="" position="2322.5,186" size="100,100">(set: $tag to $tag + (array: &quot;honest&quot;))</tw-passagedata><tw-passagedata pid="94" name=".rstre" tags="" position="2165.5,83" size="100,100">(set: $stress to $stress - 100)
+[[Socialize with People]]
+[[Damage Control]]
+[[Get Wasted]]
+(set: $sa to $sa + (array: 9))</tw-passagedata><tw-passagedata pid="81" name="GetMarried Good" tags="" position="839.5,1472" size="100,100">After years of being together. You decide to take bows and marry the person you have been looking for.
+
+You both go to a chuch and take vows and pledge to live together forever.
+
+Ding-Dong! The bells are rung!(click: &quot;Ding-Dong! The bells are rung!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(set: $sa to $sa + (array: 10))
+(display:&quot;.tagmarried&quot;)</tw-passagedata><tw-passagedata pid="82" name="Leave it alone" tags="" position="552,823" size="100,100">(display: &quot;.rwis&quot;)
+(go-to: &quot;Hub&quot;)</tw-passagedata><tw-passagedata pid="83" name=".rint" tags="" position="1700.5,75" size="100,100">(set: $intelligence to $intelligence + 180)</tw-passagedata><tw-passagedata pid="84" name=".hrint" tags="" position="1817.5,76" size="100,100">(set: $intelligence to $intelligence + 90)</tw-passagedata><tw-passagedata pid="85" name=".rch" tags="" position="1704.5,193" size="100,100">(set: $charisma to $charisma + 180)</tw-passagedata><tw-passagedata pid="86" name=".hrch" tags="" position="1819.5,193" size="100,100">(set: $charisma to $charisma + 90)</tw-passagedata><tw-passagedata pid="87" name=".rstr" tags="" position="1702.5,301" size="100,100">(set: $strength to $strength + 180)</tw-passagedata><tw-passagedata pid="88" name=".hrstr" tags="" position="1822.5,300" size="100,100">(set: $strength to $strength + 90)</tw-passagedata><tw-passagedata pid="89" name=".rfam" tags="" position="2009.5,82" size="100,100">(set: $familyLevel to $familyLevel + 1)</tw-passagedata><tw-passagedata pid="90" name=".rwis" tags="" position="2009.5,193" size="100,100">(set: $wisdom to $wisdom + 1)</tw-passagedata><tw-passagedata pid="91" name=".rcar" tags="" position="2010.5,298" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="92" name=".taghero" tags="" position="2319.5,79" size="100,100">(set: $tags to $tags + (array: &quot;hero&quot;))</tw-passagedata><tw-passagedata pid="93" name=".taghonest" tags="" position="2322.5,186" size="100,100">(set: $tags to $tags + (array: &quot;honest&quot;))</tw-passagedata><tw-passagedata pid="94" name=".rstre" tags="" position="2165.5,83" size="100,100">(set: $stress to $stress - 100)
 (replace: ?stress)[$stress]</tw-passagedata><tw-passagedata pid="95" name="UguGaga" tags="" position="358,873" size="100,100">As you open your eyes in this world you see the greatness that lies ahead of you.
 
 You know that you exists and you are aware of your surroundings.
@@ -396,8 +464,8 @@ Cry(click: &quot;Cry&quot;)[(go-to: &quot;Hub&quot;)]
 (set: $sa to $sa + (array: 11))
 (display: &quot;.hrstre&quot;)</tw-passagedata><tw-passagedata pid="96" name=".hrstre" tags="" position="2166.5,192" size="100,100">(set: $stress to $stress - 50)
 (replace: ?stress)[$stress]</tw-passagedata><tw-passagedata pid="97" name="UguGaga Storylet" tags="" position="360.5,752" size="100,100">(if:  $age &gt;= 0 and $age &lt;= 4 and not ($sa contains 11))[
-	[[Ugu Gaga-&gt;UguGaga]]]</tw-passagedata><tw-passagedata pid="98" name="Abduction Storylet" tags="" position="376.5,1131" size="100,100">(if:  $age &gt;= 8 and $age &lt;= 11 and not ($sa contains 12))[
-	[[Candy!-&gt;Abduction]]]</tw-passagedata><tw-passagedata pid="99" name="Abduction" tags="" position="378.5,1251" size="100,100">You go out one day and find candy.
+	[[Ugu Gaga-&gt;UguGaga]]]</tw-passagedata><tw-passagedata pid="98" name="Abduction Storylet" tags="" position="356.5,1104" size="100,100">(if:  $age &gt;= 8 and $age &lt;= 11 and not ($sa contains 12))[
+	[[Candy!-&gt;Abduction]]]</tw-passagedata><tw-passagedata pid="99" name="Abduction" tags="" position="358.5,1224" size="100,100">You go out one day and find candy.
 
 You get into a car and get abducted.
 
@@ -405,7 +473,329 @@ The ransom is $500,000.
 
 What?(click: &quot;What?&quot;)[(go-to: &quot;Hub&quot;)]
 
-(set: $money to $money - 500000)</tw-passagedata></tw-storydata>
+(set: $money to $money - 500000)
+(set: $sa to $sa + (array: 12))
+(display: &quot;.tagabducted&quot;)</tw-passagedata><tw-passagedata pid="100" name="Damage Control" tags="" position="3678.5,854" size="100,100">You see that people are making a mess because what is a good party without a mess.
+
+You clean and you see that you are not the only one cleaning.
+
+&quot;Oh hey, crazy party. I see that you are also cleaning.&quot; The other person says.
+
+&quot;Oh, Hi. Yeah, pretty crazy...&quot;(click: &quot;\&quot;Oh, Hi. Yeah, pretty crazy...\&quot;&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.tagfriend&quot;)</tw-passagedata><tw-passagedata pid="101" name="Socialize with People" tags="" position="3560.5,852" size="100,100">The party is going crazy and the music is pumping through your brain.
+
+You take opportunity to socialize with people.
+
+[[Talk about yourself]]
+[[Flirt]]</tw-passagedata><tw-passagedata pid="102" name="Get Wasted" tags="" position="3787.5,850" size="100,100">You take several shots.
+
+As you take the shots you notice that you sight is blurring.
+
+It was a great party.
+
+Sick Bro.(click: &quot;Sick Bro.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rstr&quot;)</tw-passagedata><tw-passagedata pid="103" name=".tagfriend" tags="" position="2323.5,295" size="100,100">(set: $tags to $tags + (array: &quot;friend&quot;))</tw-passagedata><tw-passagedata pid="104" name="Talk about yourself" tags="" position="3485.5,1002" size="100,100">You say a few statements about your life and talk about (if: $sa contains 1)[the duck story](else:)[going through high school] and everyone listens to you in delight.
+
+Making friends, yeah!(click: &quot;Making friends, yeah!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rch&quot;)</tw-passagedata><tw-passagedata pid="105" name="Flirt" tags="" position="3635.5,1002" size="100,100">You see people sitting and you decide to strike a conversation.
+
+&quot;Hey, did you fall from the sky?&quot;
+
+Cheesy lines work sometimes.(click: &quot;Cheesy lines work sometimes.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.tagfriend&quot;)</tw-passagedata><tw-passagedata pid="106" name="Dating" tags="" position="684.5,1323" size="100,100">Remember that one person you met?
+
+Well they called you up for a date. Remember?
+
+[[Love comes in unexpected places.]]
+
+(set: $sa to $sa + (array: 13))</tw-passagedata><tw-passagedata pid="107" name="Love comes in unexpected places." tags="" position="683.5,1438" size="100,100">The date goes really well.
+
+Look at you, growing.
+
+Stop it dad, you are embarrassing me!(click: &quot;Stop it dad, you are embarrassing me!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.taglover&quot;)</tw-passagedata><tw-passagedata pid="108" name="Dating Storylet" tags="" position="685.5,1213" size="100,100">(if:  $tags contains &quot;friend&quot; and not ($sa contains 13))[
+	[[Scheduled Date-&gt;Dating]]]</tw-passagedata><tw-passagedata pid="109" name=".taglover" tags="" position="2428.5,79" size="100,100">(set: $tags to $tags + (array: &quot;lover&quot;))</tw-passagedata><tw-passagedata pid="110" name=".tagmarried" tags="" position="2431.5,187" size="100,100">(set: $tags to $tags + (array: &quot;married&quot;))</tw-passagedata><tw-passagedata pid="111" name="Date" tags="" position="26.5,710" size="100,100">(set: $stress to it - (1 + $age / 20))
+(if: $tags contains &quot;married&quot;) [(set: $stress to it - (1 + $age / 20))]
+(set: $loveLevel to $loveLevel + 1)
+(replace: ?stress)[$stress]
+(replace: ?date)[Date(click: ?date)[(display: &quot;Date&quot;)]]</tw-passagedata><tw-passagedata pid="112" name="GetMarried Bad" tags="" position="955.5,1473" size="100,100">Are you not rushing things?
+
+Isn&#39;t it a bit too soon to get married? (Stress + 50)
+
+But I feel like I am ready...(click: &quot;But I feel like I am ready...&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.hr+stre&quot;)</tw-passagedata><tw-passagedata pid="113" name="GetMarried" tags="" position="897.5,1351" size="100,100">(if: $lovelevel &lt; 150) [
+	(go-to: &quot;GetMarried Bad&quot;)
+]
+(else: ) [
+	(go-to: &quot;GetMarried Good&quot;)
+]</tw-passagedata><tw-passagedata pid="114" name=".hr+stre" tags="" position="2164.5,303" size="100,100">(set: $stress to $stress + 50)
+(replace: ?stress)[$stress]</tw-passagedata><tw-passagedata pid="115" name="DateCooking Storylet" tags="" position="1216.5,1234" size="100,100">(if:  $charisma &gt;= 300 and $tags contains &quot;lover&quot; and not ($sa contains 14))[
+	[[Date Cooking (Charisma)-&gt;DateCooking]]]</tw-passagedata><tw-passagedata pid="116" name="DateCooking" tags="" position="1214.5,1358" size="100,100">You cook a special meal for your date. What do you cook?
+
+[[Wine, Cheese and Crackers-&gt;SimpleCooking]]
+[[Going Strong! Steak-&gt;StrCooking]]
+[[Something Complex. Beef Wellington and Cilantro Soup.-&gt;IntCooking]]
+
+(set: $sa to $sa + (array: 14))</tw-passagedata><tw-passagedata pid="117" name="SimpleCooking" tags="" position="1111.5,1479" size="100,100">You cook something simple. 
+
+Your lover is not surprised but appreciates it. 
+
+This stresses you out a bit but its the intention that counts. (Stress + 50)
+
+I tried.(click: &quot;I tried.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display:&quot;.rlov&quot;)
+(display: &quot;.hr+stre&quot;)</tw-passagedata><tw-passagedata pid="118" name="StrCooking" tags="" position="1222.5,1478" size="100,100">(if: $strength &lt; 200) [
+	(go-to: &quot;SimpleCooking&quot;)
+]
+(else: ) [
+	(go-to: &quot;StrCookingGood&quot;)
+]</tw-passagedata><tw-passagedata pid="119" name="IntCooking" tags="" position="1339.5,1476" size="100,100">(if: $intelligence &lt; 200) [
+	(go-to: &quot;SimpleCooking&quot;)
+]
+(else: ) [
+	(go-to: &quot;IntCookingGood&quot;)
+]</tw-passagedata><tw-passagedata pid="120" name=".rlov" tags="" position="2011.5,405" size="100,100">(set: $loveLevel to $loveLevel + 50)</tw-passagedata><tw-passagedata pid="121" name="IntCookingGood" tags="" position="1340.5,1590" size="100,100">You masterfully time the meal and make all the dishes ready for when your lover comes in.
+
+You balance the portions and masterfully show your abilities.
+
+Delicious!(click: &quot;Delicious!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)</tw-passagedata><tw-passagedata pid="122" name="StrCookingGood" tags="" position="1222.5,1587" size="100,100">You wrestle down the fire and flip a mighty tomahawk.
+
+Your lover is really impressed with your performance.
+
+Only steak for dinner? Not too balanced. (Stress + 50)
+
+Medium Rare!(click: &quot;Medium Rare!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+
+(display: &quot;.hr+stre&quot;)</tw-passagedata><tw-passagedata pid="123" name="FlirtingLine Storylet" tags="" position="1548.5,1237" size="100,100">(if:  $intelligence &gt;= 300 and $tags contains &quot;lover&quot; and not ($sa contains 15))[
+	[[Flirt (Intelligence)-&gt;FlirtingLine]]]</tw-passagedata><tw-passagedata pid="124" name="FlirtingLine" tags="" position="1549.5,1348" size="100,100">You decide to watch something and flirt with your lover.
+
+What do you want to do?
+[[Think of a witty line.-&gt;SimpleFlirt]]
+[[Wrap your lover in your arms.-&gt;StrFlirt]]
+[[Take you lover on a nice date and walk around under the moonlight.-&gt;ChFlirt]]
+
+(set: $sa to $sa + (array: 15))</tw-passagedata><tw-passagedata pid="125" name="SimpleFlirt" tags="" position="1478.5,1479" size="100,100">Roses are red.
+Violets are blue.
+You are the petals.
+That make my heart go boom.
+
+Your lover is not impressed. (Stress + 50)
+
+I tried.(click: &quot;I tried.&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display:&quot;.rlov&quot;)
+(display: &quot;.hr+stre&quot;)</tw-passagedata><tw-passagedata pid="126" name="StrFlirt" tags="" position="1585.5,1477" size="100,100">(if: $strength &lt; 200) [
+	(go-to: &quot;SimpleFlirt&quot;)
+]
+(else: ) [
+	(go-to: &quot;StrFlirtGood&quot;)
+]</tw-passagedata><tw-passagedata pid="127" name="ChFlirt" tags="" position="1694.5,1481" size="100,100">(if: $charisma &lt; 200) [
+	(go-to: &quot;SimpleFlirt&quot;)
+]
+(else: ) [
+	(go-to: &quot;ChFlirtGood&quot;)
+]</tw-passagedata><tw-passagedata pid="128" name="StrFlirtGood" tags="" position="1586.5,1589" size="100,100">You wrap your lover under your arms.
+
+Your wings bring safety to those upon them.
+
+Awww!(click: &quot;Awww!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)</tw-passagedata><tw-passagedata pid="129" name="ChFlirtGood" tags="" position="1694.5,1590" size="100,100">Your lover suspects you are planning something.
+
+However you are smooth enough to cover up the steps.
+
+You successfully distract your lover.
+
+You tell your lover to look at the moonlight.
+
+You also know that your lover has forgotten that there are fireworks today.
+
+Overplanning 1 Procrastination 0!(click: &quot;Overplanning 1 Procrastination 0!&quot;)[(go-to: &quot;Hub&quot;)]
+
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+(display: &quot;.rlov&quot;)
+
+(display: &quot;.rstre&quot;)</tw-passagedata><tw-passagedata pid="130" name="IntWorkPromotion Storylet" tags="" position="1944.5,1236" size="100,100">(if:  ($intelligence &gt;= 250 or $tags contains &quot;hookup&quot;) and not ($sa contains 16))[
+	[[Look for a job. (Intelligence)-&gt;IntLookForJob]]]</tw-passagedata><tw-passagedata pid="131" name="IntLookForJob" tags="" position="1941.5,1362" size="100,100">You apply for jobs the highest tech companies out there...
+
+Your resume is looking (if: $intelligence is &gt;= 250)[pretty good](else: )[decent].
+
+You go into an interview and they give you a wage.
+
+[[Lowball Wage-&gt;lowWage]]
+[[Highball Wage-&gt;highWage]]</tw-passagedata><tw-passagedata pid="132" name="lowWage" tags="" position="1876.5,1509" size="100,100">You low ball them.
+
+They immediately accept. You will start working in that company starting the next day.
+(if: $intelligence &gt;= 350 or $tags contains &quot;hookup&quot;) [
+One of the interviewees looks at you and shakes his head. You should never undersell yourself.
+]
+Nice!(click: &quot;Nice!&quot;)[(go-to: &quot;Hub&quot;)]
+(set: $careerLevel to 1)
+(set: $sa to $sa + (array: 16))</tw-passagedata><tw-passagedata pid="133" name="highWage" tags="" position="2032.5,1508" size="100,100">(if: $intelligence is &gt;= 350 or $tags contains &quot;hookup&quot;) [(go-to: &quot;highWageGood&quot;)] (else: ) [(go-to: &quot;highWageBad&quot;)]</tw-passagedata><tw-passagedata pid="134" name="highWageGood" tags="" position="2094.5,1616" size="100,100">You are confident of your skills.
+
+You go and highball your wage.
+
+They are a bit hesitant but they give you what you wanted.
+
+Heck Yeah!(click: &quot;Heck Yeah!&quot;)[(go-to: &quot;Hub&quot;)]
+(set: $careerLevel to 2)
+(set: $sa to $sa + (array: 16))</tw-passagedata><tw-passagedata pid="135" name="highWageBad" tags="" position="1987.5,1617" size="100,100">The offer gets denied.
+
+Try again next time!(click: &quot;Try again next time!&quot;)[(go-to: &quot;Hub&quot;)]</tw-passagedata><tw-passagedata pid="136" name="SLookForJob Storylet" tags="" position="2431.5,1230" size="100,100">(if:  $age &gt;= 21 and not ($sa contains 17))[
+	[[Look for a job.-&gt;SLookForJob]]]</tw-passagedata><tw-passagedata pid="137" name="SLookForJob" tags="" position="2433.5,1366" size="100,100">You are looking for jobs but you cannot find any.
+
+You apply anywhere for jobs on your career but you cannot get past the interview.
+
+In defeat you sit down in the street with your tie and suit and ponder about your life choices.
+
+You decide you maybe should do something before heading home.
+
+[[Stop by the store-&gt;LFJStore]]
+[[Stop by the park-&gt;LFJPark]]
+[[Call your cousin-&gt;LFJCousin]]
+[[Walk back home-&gt;LFJThug]]</tw-passagedata><tw-passagedata pid="138" name="LFJStore" tags="" position="2410.5,1506" size="100,100">You walk into the store defeated. Maybe you could get something to cheer you up and maybe some breakfast to eat before the morning interview.
+
+[[Browse around-&gt;LFJStoreCheck]]</tw-passagedata><tw-passagedata pid="139" name="LFJPark" tags="" position="2524.5,1509" size="100,100">As you walk through the park you see kids and it reminds you of your childhood.
+(if: $sa contains 1) [
+You remember that one time you were with you and your friend and there was an injured duck.
+]
+At the distance you see some kids throwing rocks at the ducks on the pond.
+
+[[Hey kids, what are you doing?-&gt;LFJParkCheck]]</tw-passagedata><tw-passagedata pid="140" name="LFJCousin" tags="" position="2636.5,1509" size="100,100">In defeat you call your cousin and tell him your struggle finding a job.
+
+He just secured a job on a high tech company.
+
+[[Men, I wish I was there too-&gt;LFJCousinCheck]]</tw-passagedata><tw-passagedata pid="141" name="LFJCousinCheck" tags="" position="2674.5,1622" size="100,100">(if: $familyLevel &gt;= 4) [(go-to: &quot;LFJCousinGood&quot;)] (else: ) [(go-to: &quot;LFJCousinBad&quot;)]</tw-passagedata><tw-passagedata pid="142" name="LFJCousinGood" tags="" position="2622.5,1729" size="100,100">You and your cousin talk for a really long time and remember the times you had together.
+
+That was a nice distraction.
+
+&quot;Hey, you know. I feel I can help you out a bit.&quot;
+
+&quot;Let me tell my boss if I can hook you up.&quot;
+
+What!?(click: &quot;What!?&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.taghookup&quot;)
+(set: $sa to $sa + (array: 17))</tw-passagedata><tw-passagedata pid="143" name="LFJCousinBad" tags="" position="2739.5,1731" size="100,100">There is not much to talk with your cousin.
+
+He tells you about his company benefits and his wage. (Stress + 50)
+
+Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.hr+stre&quot;)</tw-passagedata><tw-passagedata pid="144" name=".taghookup" tags="" position="2431.5,295" size="100,100">(set: $tags to $tags + (array: &quot;hookup&quot;))</tw-passagedata><tw-passagedata pid="145" name="LFJParkCheck" tags="" position="2535.5,1839" size="100,100">(if: $tags contains &quot;hero&quot;) [(go-to: &quot;LFJParkGood&quot;)] (else: ) [(go-to: &quot;LFJParkBad&quot;)]</tw-passagedata><tw-passagedata pid="146" name="LFJThug" tags="" position="2287.5,1512" size="100,100">As you are walking back you hear some noises.
+
+In the alley you see a bunch of thugs kicking what seems to be a living person.
+
+[[Do something about it-&gt;LFJThugCheck]]
+[[Walk away]]</tw-passagedata><tw-passagedata pid="147" name="LFJParkBad" tags="" position="2478.5,1940" size="100,100">Thats what you think you should do but you ignore it and walk away.
+
+There is no time to think about ducks. Need to think about yourself. (Stress + 50)
+
+Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.hr+stre&quot;)</tw-passagedata><tw-passagedata pid="148" name="LFJParkGood" tags="" position="2596.5,1943" size="100,100">Hey kids!
+
+Stop it. It hurts to get hit by a rock.
+
+As you are scolking them you see their parents come from the distance.
+
+&quot;Oh, I see what happened. My kids do not understand.&quot;
+
+&quot;Alright apologize Lisa and Connor.&quot;
+
+&quot;We are sorry and sorry ducky.&quot;
+
+&quot;Say, you look like a good kid&quot;
+
+The parent notices that you are wearing a suit and you tell them about your tough luck. The parents looking at you decide to hook you up for a job.
+
+Wow. Life takes you everywhere.(click: &quot;Wow. Life takes you everywhere.&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.taghookup&quot;)
+(set: $sa to $sa + (array: 17))</tw-passagedata><tw-passagedata pid="149" name="LFJStoreCheck" tags="" position="2358.5,1939" size="100,100">(if: $tags contains &quot;honest&quot;) [(go-to: &quot;LFJStoreGood&quot;)] (else: ) [(go-to: &quot;LFJStoreBad&quot;)]</tw-passagedata><tw-passagedata pid="150" name="LFJStoreBad" tags="" position="2299.5,2060" size="100,100">As you browse through the store you find nothing that really appeals you.
+
+You decide to walk away back home in defeat. (Stress + 50)
+
+Continue(click: &quot;Continue&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.hr+stre&quot;)</tw-passagedata><tw-passagedata pid="151" name="LFJStoreGood" tags="" position="2407.5,2061" size="100,100">As you approach you remember that one time you saw the videogame open and how you returned it to the manager.
+
+You look at the games and then you look at your empty pockets.
+
+As you are distracted someone calls your name. It startles you.
+
+&quot;Hey, remember me?&quot; The manager says in a firm tone.
+
+&quot;You are looking fancy today but your hair and your tie does not look too good. Did something happen bud?&quot;
+
+You explain your situation to the manager.
+
+The manager then looks up.
+
+&quot;Man, pity. I will never understand how those companies only look at paper and nothing else. You seem like hireable material to me.&quot;
+
+&quot;I am old already. I need to move on. How about you take over for me?&quot;
+
+What?!
+
+Luck comes from unprecedented places(click: &quot;Luck comes from unprecedented places&quot;)[(go-to: &quot;Hub&quot;)]
+(set: $careerLevel to 3)
+(display: &quot;.tagretail&quot;)
+(set: $sa to $sa + (array: 17))</tw-passagedata><tw-passagedata pid="152" name="LFJThugCheck" tags="" position="2218.5,1681" size="100,100">(if: $wisdom &gt;= 2) [(go-to: &quot;LFJThugGood&quot;)] (else: ) [(go-to: &quot;LFJThugBad&quot;)]</tw-passagedata><tw-passagedata pid="153" name="Walk away" tags="" position="2334.5,1669" size="100,100">{(go-to: &quot;Hub&quot;)}</tw-passagedata><tw-passagedata pid="154" name="LFJThugBad" tags="" position="2147.5,1786" size="100,100">You do not really know the ways of the street that well.
+
+You shout at them to stop.
+
+Once they hear you they start walking towards you to intimidate you.
+
+Run away(click: &quot;Run away&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.hr+stre&quot;)</tw-passagedata><tw-passagedata pid="155" name="LFJThugGood" tags="" position="2254.5,1789" size="100,100">You have had your points in life.
+
+You know the tough life.
+
+You play a horn sound really loudly on your phone.
+
+As the thugs hear the sound, they decide to run away from the sound leaving the person on the ground.
+
+&quot;Hey, are you ok?&quot;
+
+The person coughs a bit of blood and you quickly call an ambulance for him.
+
+Turns out the person that you saved was a pretty high status boss of a high tech company. He offers you a job in his company.
+
+What!?(click: &quot;What!?&quot;)[(go-to: &quot;Hub&quot;)]
+(display: &quot;.taghookup&quot;)
+(set: $sa to $sa + (array: 17))</tw-passagedata><tw-passagedata pid="156" name=".tagretail" tags="" position="2538.5,79" size="100,100">(set: $tags to $tags + (array: &quot;retail&quot;))</tw-passagedata><tw-passagedata pid="157" name="MoreThings Storylet" tags="" position="3053.5,1235" size="100,100">(if:  $age &gt;= 30 and not ($sa contains 18))[
+	[[End this game-&gt;Hardend]]]</tw-passagedata><tw-passagedata pid="158" name="Hardend" tags="" position="3053.5,1385" size="100,100">There are a lot more things we want to make for this game.
+
+The sheer amount of possibilities and choices we can do are tremendous.
+The main mechanics were pretty fun.
+
+Too much content to put under 1 week. This is not over!
+
+
+Timeline by Robert Ramirez and George Quan
+
+
+The End(click: &quot;The End&quot;)[(go-to: &quot;Accomplishments&quot;)]</tw-passagedata><tw-passagedata pid="159" name=".tagabducted" tags="" position="2541.5,187" size="100,100">(set: $tags to $tags + (array: &quot;abducted&quot;))</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
